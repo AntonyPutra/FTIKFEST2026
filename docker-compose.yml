@@ -1,5 +1,6 @@
 services:
   ftikfest-web:
+    build: .
     image: ftikfest-web:latest
     container_name: ftikfest-web
     restart: unless-stopped
