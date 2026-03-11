@@ -2,10 +2,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ActivitiesSection from "@/components/ActivitiesSection";
-import LineupSection from "@/components/LineupSection";
-import TicketSection from "@/components/TicketSection";
-import EventInfoSection from "@/components/EventInfoSection";
-import FnBSection from "@/components/FnBSection";
 import CountdownSection from "@/components/CountdownSection";
 import SponsorSection from "@/components/SponsorSection";
 import FAQSection from "@/components/FAQSection";
@@ -20,10 +16,6 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ActivitiesSection />
-      <LineupSection />
-      <TicketSection />
-      <EventInfoSection />
-      <FnBSection />
       <CountdownSection />
       <SponsorSection />
       <FAQSection />

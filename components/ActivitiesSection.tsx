@@ -1,9 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import EventInfoSection from "./EventInfoSection";
+import LineupSection from "./LineupSection";
+import TicketSection from "./TicketSection";
+import FnBSection from "./FnBSection";
 
 export default function ActivitiesSection() {
-  const activities = [
+  type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "closing";
+
+  const activities: Array<{
+    id: ActivityId;
+    title: string;
+    subtitle: string;
+    shortDesc: string;
+    fullDesc: string;
+    highlights: string[];
+    icon: string;
+    color: string;
+  }> = [
     {
       id: "sgc",
       title: "SGC",
@@ -18,9 +33,9 @@ export default function ActivitiesSection() {
       id: "dekan-cup",
       title: "Dekan Cup",
       subtitle: "Ajang Kompetisi",
-      shortDesc: "Ajang unjuk bakat dan sportivitas melalui perlombaan.",
-      fullDesc: "Dekan Cup merupakan kompetisi bergengsi antar mahasiswa dan SMA/SMK yang mempertandingkan beragam cabang lomba. Mulai dari olahraga (Futsal, Basket, Voli), E-Sports (Mobile Legends, Valorant), hingga kompetisi seni kreatif. Ini adalah panggung pembuktian bagi tim terbaik untuk memperebutkan gelar juara umum dan hadiah jutaan rupiah!",
-      highlights: ["Kompetisi Olahraga Futsal & Basket", "Turnamen E-Sports", "Lomba Seni Kreatif"],
+      shortDesc: "Ajang unjuk bakat dan sportivitas melalui 4 cabang perlombaan.",
+      fullDesc: "Dekan Cup merupakan kompetisi bergengsi antar mahasiswa dan SMA/SMK yang terbagi dalam dua kategori utama: Akademik dan Non-Akademik. Pada kategori akademik, kamu bisa mengasah kreativitas lewat lomba Infografis dan kemampuan bercerita melalui Story Telling. Sementara itu di kategori non-akademik, tersedia kompetisi Futsal yang seru (terbatas 16 tim) dan kompetisi Band untuk unjuk aksi panggung musikalmu!",
+      highlights: ["Kategori Akademik: Infografis & Story Telling", "Kategori Non-Akademik: Futsal (16 Teams) & Band", "Trophy, Sertifikat, & Uang Pembinaan"],
       icon: "🏆",
       color: "#B388FF",
     },
@@ -159,7 +174,7 @@ export default function ActivitiesSection() {
                 <span style={{ color: activeTab.color }}>✨</span> Highlight Kegiatan:
               </h4>
               <ul className="space-y-4 text-left">
-                {activeTab.highlights.map((highlight, idx) => (
+                {activeTab.highlights.map((highlight: string, idx: number) => (
                   <li key={idx} className="flex flex-row items-baseline gap-3">
                     <span className="mt-1" style={{ color: activeTab.color }}>✦</span>
                     <span className="text-[#E0F7FF]/90 text-base sm:text-lg">{highlight}</span>
@@ -169,6 +184,20 @@ export default function ActivitiesSection() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Dynamic Activity Sections based on Selected Tab */}
+      <div className="mt-8 relative z-10 w-full animate-fade-in">
+        <EventInfoSection activityId={activeTab.id} />
+        {activeTab.id === "closing" && (
+          <>
+            <LineupSection />
+            <FnBSection />
+          </>
+        )}
+        {(activeTab.id === "dekan-cup" || activeTab.id === "closing") && (
+          <TicketSection activityId={activeTab.id} />
+        )}
       </div>
     </section>
   );

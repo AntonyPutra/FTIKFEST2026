@@ -41,7 +41,7 @@ export default function Navbar() {
             style={{ filter: "drop-shadow(0 0 8px rgba(0,245,212,0.5))" }}
           />
           <span
-            className="text-white font-bold text-lg tracking-wider hidden sm:block"
+            className="text-white font-bold text-xl sm:text-2xl tracking-wider hidden sm:block"
             style={{ fontFamily: "'Cinzel Decorative', serif" }}
           >
             FTIK<span className="text-[#00F5D4]">FEST</span>
@@ -54,7 +54,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[#E0F7FF]/70 hover:text-[#00F5D4] text-sm font-medium tracking-wide transition-colors duration-200 hover:drop-shadow-[0_0_6px_rgba(0,245,212,0.7)]"
+                className="text-[#E0F7FF]/70 hover:text-[#00F5D4] text-base font-semibold tracking-wide transition-colors duration-200 hover:drop-shadow-[0_0_6px_rgba(0,245,212,0.7)]"
               >
                 {link.label}
               </a>
@@ -66,7 +66,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#tickets"
-            className="hidden md:inline-flex items-center gap-2 bg-[#00F5D4] text-[#0B0F1A] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,245,212,0.6)]"
+            className="hidden md:inline-flex items-center gap-2 bg-[#00F5D4] text-[#0B0F1A] font-bold text-base px-6 py-2.5 rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,245,212,0.6)]"
           >
             Get Tickets
           </a>
@@ -97,7 +97,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="block py-3 text-[#E0F7FF]/80 hover:text-[#00F5D4] font-medium tracking-wide transition-colors border-b border-white/5"
+                className="block py-4 text-[#E0F7FF]/80 hover:text-[#00F5D4] text-lg font-medium tracking-wide transition-colors border-b border-white/5"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -107,7 +107,7 @@ export default function Navbar() {
           <li className="pt-3">
             <a
               href="#tickets"
-              className="block text-center bg-[#00F5D4] text-[#0B0F1A] font-bold py-3 rounded-full"
+              className="block text-center bg-[#00F5D4] text-[#0B0F1A] text-lg font-bold py-3 mt-2 rounded-full"
               onClick={() => setMenuOpen(false)}
             >
               Get Tickets
