@@ -99,9 +99,9 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 py-24 max-w-5xl mx-auto">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#00F5D4]/10 border border-[#00F5D4]/30 text-[#00F5D4] text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full mb-8 animate-fade-in-up">
-          <span className="w-2 h-2 rounded-full bg-[#00F5D4] animate-pulse" />
-          Campus Music Festival
+        <div className="inline-flex max-w-full items-center gap-2 bg-[#00F5D4]/10 border border-[#00F5D4]/30 text-[#00F5D4] text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase px-4 sm:px-5 py-2 rounded-full mb-8 animate-fade-in-up whitespace-nowrap overflow-hidden text-ellipsis">
+          <span className="w-2 h-2 rounded-full bg-[#00F5D4] shrink-0 animate-pulse" />
+          <span className="truncate">Campus Music Festival</span>
         </div>
 
         {/* Logo */}
@@ -133,21 +133,20 @@ export default function HeroSection() {
 
         {/* Main Headline */}
         <h1
-          className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-white mb-3 animate-fade-in-up"
+          className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tight text-white mb-3 animate-fade-in-up flex flex-wrap justify-center items-center gap-2 sm:gap-4"
           style={{
             fontFamily: "'Cinzel Decorative', serif",
             animationDelay: "0.25s",
             textShadow: "0 0 40px rgba(0,245,212,0.3), 0 0 80px rgba(179,136,255,0.15)",
           }}
         >
-          FTIK
+          <span>FTIK</span>
           <span
             className="gradient-text-turquoise"
-            style={{ display: "inline-block", marginLeft: "0.2em" }}
           >
             FEST
           </span>
-          <span className="text-[#FF7A00] ml-3">26</span>
+          <span className="text-[#FF7A00]">26</span>
         </h1>
 
         {/* Subheadline */}
@@ -160,29 +159,29 @@ export default function HeroSection() {
 
         {/* Date & Venue placeholder */}
         <div
-          className="flex items-center gap-3 text-[#E0F7FF]/40 text-sm mb-10 animate-fade-in-up"
+          className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-[#E0F7FF]/40 text-xs sm:text-sm mb-10 animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
         >
           <span>📅 27 Juni 2026</span>
-          <span className="w-1 h-1 rounded-full bg-[#E0F7FF]/30" />
+          <span className="hidden sm:block w-1 h-1 rounded-full bg-[#E0F7FF]/30" />
           <span>📍 Awan Costa, Semarang</span>
         </div>
 
         {/* CTA Buttons */}
         <div
-          className="flex flex-col sm:flex-row gap-4 mb-14 animate-fade-in-up"
+          className="flex flex-col sm:flex-row w-full sm:w-auto gap-4 mb-14 animate-fade-in-up px-4 sm:px-0"
           style={{ animationDelay: "0.5s" }}
         >
           <a
             href="#tickets"
-            className="group relative inline-flex items-center justify-center gap-2 bg-[#00F5D4] text-[#0B0F1A] font-black text-base px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,245,212,0.6)] hover:scale-105 overflow-hidden"
+            className="group w-full sm:w-auto relative inline-flex items-center justify-center gap-2 bg-[#00F5D4] text-[#0B0F1A] font-black text-sm sm:text-base px-6 sm:px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,245,212,0.6)] hover:scale-105 overflow-hidden"
           >
             <span className="relative z-10">🎟️ Get Tickets</span>
             <div className="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
           </a>
           <a
             href="#lineup"
-            className="inline-flex items-center justify-center gap-2 border-2 border-[#B388FF] text-[#B388FF] font-bold text-base px-8 py-4 rounded-full hover:bg-[#B388FF]/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(179,136,255,0.4)]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-[#B388FF] text-[#B388FF] font-bold text-sm sm:text-base px-6 sm:px-8 py-4 rounded-full hover:bg-[#B388FF]/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(179,136,255,0.4)]"
           >
             🎵 See Lineup
           </a>
@@ -196,13 +195,13 @@ export default function HeroSection() {
           <p className="text-[#E0F7FF]/30 text-xs tracking-[0.3em] uppercase mb-4">
             Hitung Mundur Acara
           </p>
-          <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex justify-center items-center gap-2 sm:gap-6">
             <CountdownBlock value={timeLeft.days} label="Hari" />
-            <span className="text-[#00F5D4] text-2xl font-bold mb-4">:</span>
+            <span className="text-[#00F5D4] text-xl sm:text-2xl font-bold mb-4">:</span>
             <CountdownBlock value={timeLeft.hours} label="Jam" />
-            <span className="text-[#00F5D4] text-2xl font-bold mb-4">:</span>
+            <span className="text-[#00F5D4] text-xl sm:text-2xl font-bold mb-4">:</span>
             <CountdownBlock value={timeLeft.minutes} label="Menit" />
-            <span className="text-[#00F5D4] text-2xl font-bold mb-4">:</span>
+            <span className="text-[#00F5D4] text-xl sm:text-2xl font-bold mb-4">:</span>
             <CountdownBlock value={timeLeft.seconds} label="Detik" />
           </div>
         </div>

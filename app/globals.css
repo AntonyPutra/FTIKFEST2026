@@ -19,6 +19,7 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 20px;
   }
 
   body {
@@ -26,6 +27,7 @@
     color: #E0F7FF;
     font-family: "Inter", sans-serif;
     overflow-x: hidden;
+    line-height: 1.7;
   }
 
   ::selection {

@@ -27,9 +27,9 @@ const eventDate = new Date("2026-06-27T15:00:00+07:00"); // Tanggal event: 27 Ju
 
 function BigBlock({ value, label }: { value: number; label: string }) {
   return (
-    <div className="flex flex-col items-center gap-3">
+    <div className="flex flex-col items-center gap-2 sm:gap-3">
       <div
-        className="relative w-20 h-24 sm:w-32 sm:h-36 bg-white/5 border border-[#00F5D4]/20 rounded-2xl flex items-center justify-center overflow-hidden"
+        className="relative w-16 h-20 sm:w-32 sm:h-36 bg-white/5 border border-[#00F5D4]/20 rounded-xl sm:rounded-2xl flex items-center justify-center overflow-hidden"
         style={{ boxShadow: "0 0 30px rgba(0,245,212,0.1), inset 0 0 30px rgba(0,245,212,0.03)" }}
       >
         {/* Shimmer */}
@@ -40,7 +40,7 @@ function BigBlock({ value, label }: { value: number; label: string }) {
           }}
         />
         <span
-          className="relative text-4xl sm:text-6xl font-black tabular-nums text-glow-turquoise"
+          className="relative text-3xl sm:text-6xl font-black tabular-nums text-glow-turquoise"
           style={{ color: "#00F5D4", fontFamily: "'Cinzel Decorative', serif" }}
         >
           {String(value).padStart(2, "0")}
@@ -84,29 +84,29 @@ export default function CountdownSection() {
           Bersiaplah
         </p>
         <h2
-          className="text-4xl sm:text-6xl font-black text-white mb-4"
+          className="text-3xl sm:text-6xl font-black text-white mb-4 flex flex-wrap justify-center gap-x-2"
           style={{ fontFamily: "'Cinzel Decorative', serif" }}
         >
-          The{" "}
-          <span className="gradient-text-turquoise">Countdown</span>{" "}
-          Begins
+          <span>The</span>
+          <span className="gradient-text-turquoise">Countdown</span>
+          <span>Begins</span>
         </h2>
         <p className="text-[#E0F7FF]/50 mb-14 max-w-sm mx-auto">
           Waktu terus berdetak. Jangan sampai kamu menyesal ketinggalan.
         </p>
 
         {/* Countdown blocks */}
-        <div className="flex items-center justify-center gap-4 sm:gap-8">
+        <div className="flex items-center justify-center gap-2 sm:gap-8">
           <BigBlock value={timeLeft.days} label="Hari" />
-          <div className="text-[#00F5D4] text-4xl sm:text-5xl font-black mb-8 text-glow-turquoise">
+          <div className="text-[#00F5D4] text-2xl sm:text-5xl font-black mb-6 sm:mb-8 text-glow-turquoise">
             :
           </div>
           <BigBlock value={timeLeft.hours} label="Jam" />
-          <div className="text-[#00F5D4] text-4xl sm:text-5xl font-black mb-8 text-glow-turquoise">
+          <div className="text-[#00F5D4] text-2xl sm:text-5xl font-black mb-6 sm:mb-8 text-glow-turquoise">
             :
           </div>
           <BigBlock value={timeLeft.minutes} label="Menit" />
-          <div className="text-[#00F5D4] text-4xl sm:text-5xl font-black mb-8 text-glow-turquoise">
+          <div className="text-[#00F5D4] text-2xl sm:text-5xl font-black mb-6 sm:mb-8 text-glow-turquoise">
             :
           </div>
           <BigBlock value={timeLeft.seconds} label="Detik" />
