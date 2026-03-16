@@ -60,14 +60,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA + Hamburger */}
         <div className="flex items-center gap-3">
-          <a
-            href="#tickets"
-            className="hidden md:inline-flex items-center gap-2 bg-[#00F5D4] text-[#0B0F1A] font-bold text-base px-6 py-2.5 rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,245,212,0.6)]"
-          >
-            Get Tickets
-          </a>
           <button
             className="md:hidden text-[#E0F7FF] p-2"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -102,15 +95,6 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li className="pt-3">
-            <a
-              href="#tickets"
-              className="block text-center bg-[#00F5D4] text-[#0B0F1A] text-lg font-bold py-3 mt-2 rounded-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Get Tickets
-            </a>
-          </li>
         </ul>
       </div>
     </header>
