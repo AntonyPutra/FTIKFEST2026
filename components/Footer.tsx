@@ -21,54 +21,51 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-4 mb-6">
               <Image
                 src="/logo.png"
                 alt="FTIK FEST 2026"
-                width={48}
-                height={48}
+                width={56}
+                height={56}
                 className="object-contain"
-                style={{ filter: "drop-shadow(0 0 8px rgba(0,245,212,0.4))" }}
+                style={{ filter: "drop-shadow(0 0 12px rgba(0,245,212,0.4))" }}
               />
               <div>
                 <div
-                  className="text-xl font-black text-white"
+                  className="text-2xl sm:text-3xl font-black text-white leading-none"
                   style={{ fontFamily: "'Cinzel Decorative', serif" }}
                 >
-                  FTIK FEST
-                  <span className="text-[#00F5D4]"> 2026</span>
+                  FTIK FEST <span className="text-[#00F5D4]">2026</span>
                 </div>
-                <div className="text-[#E0F7FF]/30 text-xs tracking-widest uppercase">
-                  Campus Music Festival
+                <div className="text-[#00F5D4] text-[10px] sm:text-xs tracking-[0.4em] font-black uppercase mt-2">
+                  Rise of the Champions
                 </div>
               </div>
             </div>
-            <p className="text-[#E0F7FF]/40 text-sm leading-relaxed max-w-xs">
-              Satu malam, ribuan kenangan. Festival musik kampus paling memorable di Semarang.
+            <p className="text-[#E0F7FF]/50 text-sm sm:text-base leading-relaxed max-w-sm mb-4">
+              Explore. Compete. Conquer. — Where Great Minds Meet and Champions Rise.
             </p>
-            <p className="text-[#E0F7FF]/30 text-xs mt-3">
-              {/* TODO: Replace with actual organizer name */}
-              Diselenggarakan oleh BEM FTIK • Semarang
+            <p className="text-[#E0F7FF]/30 text-xs font-medium">
+              Diselenggarakan oleh <span className="text-[#E0F7FF]/60">BEM FTIK • Semarang</span>
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-bold text-sm mb-4 tracking-wider uppercase">
+            <h4 className="text-white font-black text-xs mb-6 tracking-[0.2em] uppercase opacity-50">
               Navigasi
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-4">
               {[
                 { href: "#about", label: "Tentang" },
-                { href: "#lineup", label: "Lineup" },
-                { href: "#tickets", label: "Tiket" },
+                { href: "#activities", label: "Acara" },
                 { href: "#info", label: "Info Event" },
                 { href: "#faq", label: "FAQ" },
               ].map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[#E0F7FF]/50 hover:text-[#00F5D4] text-sm transition-colors duration-200"
+                    className="text-[#E0F7FF]/60 hover:text-[#00F5D4] text-sm font-medium transition-all duration-200 hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </a>

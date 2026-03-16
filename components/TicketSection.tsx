@@ -1,21 +1,10 @@
-type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "closing";
+type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "glory-cup";
 
 // TODO: Update harga, kuota, dan status tiap fase saat presale dibuka
 const PROTIX_URL = "https://protix.id/ftikfest/";
 
 const TICKETS_DATA: Record<string, any> = {
-  "dekan-cup": {
-    title: "Pendaftaran Dekan Cup",
-    subtitle: "Daftarkan tim terbaikmu",
-    description: "Amankan slot tim kamu sebelum ditutup. Kuota pendaftaran sangat terbatas untuk tiap cabang lomba.",
-    items: [
-      { tier: "Infografis", price: "Segera", quota: "Kuota Terbatas", status: "coming_soon", color: "#00F5D4", badge: "Kategori Akademik", features: ["1 Tim Infografis", "Sertifikat", "Uang Pembinaan"] },
-      { tier: "Story Telling", price: "Segera", quota: "Kuota Terbatas", status: "coming_soon", color: "#B388FF", badge: "Kategori Akademik", features: ["Peserta Individu", "Sertifikat", "Uang Pembinaan"] },
-      { tier: "Futsal", price: "Segera", quota: "16 Tim", status: "coming_soon", color: "#FF7A00", badge: "Kategori Non-Akademik", features: ["1 Tim Futsal", "Sertifikat", "Trophy & Uang Pembinaan"], highlighted: true },
-      { tier: "Band", price: "Segera", quota: "Kuota Terbatas", status: "coming_soon", color: "#00F5D4", badge: "Kategori Non-Akademik", features: ["1 Grup Band", "Sertifikat", "Uang Pembinaan"] },
-    ]
-  },
-  "closing": {
+  "glory-cup": {
     title: "Tiket FTIK FEST 2026",
     subtitle: "Dapatkan Tiketmu",
     description: "Harga makin naik setiap fase. Jangan tunggu sampai kehabisan — amankan spotmu sekarang.",
@@ -36,8 +25,8 @@ const STATUS_CONFIG: Record<string, { label: string; color: string; bgColor: str
   coming_soon: { label: "Segera", color: "#B388FF", bgColor: "rgba(179,136,255,0.1)" },
 };
 
-export default function TicketSection({ activityId = "closing" }: { activityId?: ActivityId }) {
-  if (activityId !== "dekan-cup" && activityId !== "closing") {
+export default function TicketSection({ activityId = "glory-cup" }: { activityId?: ActivityId }) {
+  if (activityId !== "glory-cup") {
     return null; // Don't show tickets for other events
   }
 
@@ -144,9 +133,9 @@ export default function TicketSection({ activityId = "closing" }: { activityId?:
                   {/* CTA Button */}
                   {isAvailable ? (
                     <a
-                      href={activityId === "dekan-cup" ? "#" : PROTIX_URL}
-                      target={activityId === "dekan-cup" ? "_self" : "_blank"}
-                      rel={activityId === "dekan-cup" ? "" : "noopener noreferrer"}
+                      href={PROTIX_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-full py-3 rounded-xl text-sm font-bold transition-all duration-300 text-center block hover:opacity-90 hover:scale-105"
                       style={{
                         background: ticket.highlighted ? "#00F5D4" : `${ticket.color}22`,
@@ -155,7 +144,7 @@ export default function TicketSection({ activityId = "closing" }: { activityId?:
                         boxShadow: ticket.highlighted ? "0 0 20px rgba(0,245,212,0.3)" : "none",
                       }}
                     >
-                      {activityId === "dekan-cup" ? "Daftar Sekarang" : "🎟️ Beli Tiket"}
+                      🎟️ Beli Tiket
                     </a>
                   ) : (
                     <div

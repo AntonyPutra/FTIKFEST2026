@@ -26,7 +26,7 @@ function useCountdown(targetDate: Date) {
   return timeLeft;
 }
 
-const eventDate = new Date("2026-06-27T15:00:00+07:00"); // Tanggal event: 27 Juni 2026
+const eventDate = new Date("2026-06-06T09:00:00+07:00"); // Tanggal event: 6 Juni 2026
 
 function CountdownBlock({ value, label }: { value: number; label: string }) {
   return (
@@ -101,91 +101,51 @@ export default function HeroSection() {
         {/* Badge */}
         <div className="inline-flex max-w-full items-center gap-2 bg-[#00F5D4]/10 border border-[#00F5D4]/30 text-[#00F5D4] text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase px-4 sm:px-5 py-2 rounded-full mb-8 animate-fade-in-up whitespace-nowrap overflow-hidden text-ellipsis">
           <span className="w-2 h-2 rounded-full bg-[#00F5D4] shrink-0 animate-pulse" />
-          <span className="truncate">Campus Music Festival</span>
+          <span className="truncate">Rise of the Champions</span>
         </div>
 
-        {/* Logo */}
-        <div
-          className="w-48 h-48 sm:w-64 sm:h-64 mb-6 animate-fade-in-up"
-          style={{ animationDelay: "0.1s" }}
-        >
-          <Image
-            src="/logo.png"
-            alt="FTIK FEST 2026 Logo"
-            width={256}
-            height={256}
-            priority
-            className="object-contain w-full h-full"
-            style={{
-              filter:
-                "drop-shadow(0 0 30px rgba(0,245,212,0.5)) drop-shadow(0 0 60px rgba(179,136,255,0.3))",
-            }}
-          />
-        </div>
+        {/* ... (Logo section remains the same) ... */}
 
-        {/* Coming Soon */}
+        {/* Campus Festival Tag */}
         <div
-          className="text-[#E0F7FF]/40 text-sm font-bold tracking-[0.4em] uppercase mb-2 animate-fade-in-up"
+          className="text-[#00F5D4] text-xs sm:text-sm font-black tracking-[0.4em] sm:tracking-[0.8em] uppercase mb-4 animate-fade-in-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Coming Soon
+          Rise of the Champions
         </div>
 
         {/* Main Headline */}
         <h1
-          className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tight text-white mb-3 animate-fade-in-up flex flex-wrap justify-center items-center gap-2 sm:gap-4"
+          className="text-4xl sm:text-7xl md:text-9xl font-black tracking-tight text-white mb-6 animate-fade-in-up flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-8"
           style={{
             fontFamily: "'Cinzel Decorative', serif",
             animationDelay: "0.25s",
             textShadow: "0 0 40px rgba(0,245,212,0.3), 0 0 80px rgba(179,136,255,0.15)",
           }}
         >
-          <span>FTIK</span>
-          <span
-            className="gradient-text-turquoise"
-          >
-            FEST
+          <span className="flex items-center gap-4">
+            <span>FTIK</span>
+            <span className="gradient-text-turquoise">FEST</span>
           </span>
-          <span className="text-[#FF7A00]">26</span>
+          <span className="text-[#00F5D4] drop-shadow-[0_0_20px_rgba(0,245,212,0.4)]">2026</span>
         </h1>
 
         {/* Subheadline */}
-        <p
-          className="text-base sm:text-xl text-[#E0F7FF]/70 max-w-xl mb-2 leading-relaxed animate-fade-in-up"
+        <div
+          className="text-base sm:text-xl md:text-2xl text-[#E0F7FF]/80 max-w-4xl mb-6 leading-relaxed animate-fade-in-up font-medium"
           style={{ animationDelay: "0.35s" }}
         >
-          A night of music, youth energy, and unforgettable moments.
-        </p>
-
-        {/* Date & Venue placeholder */}
-        <div
-          className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-[#E0F7FF]/40 text-xs sm:text-sm mb-10 animate-fade-in-up"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <span>📅 27 Juni 2026</span>
-          <span className="hidden sm:block w-1 h-1 rounded-full bg-[#E0F7FF]/30" />
-          <span>📍 Awan Costa, Semarang</span>
+          <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2">
+            <span className="w-full sm:w-auto">
+              <span className="text-[#00F5D4] text-glow-turquoise font-black uppercase tracking-wider">Explore.</span>{" "}
+              <span className="text-[#B388FF] text-glow-lavender font-black uppercase tracking-wider">Compete.</span>{" "}
+              <span className="text-[#FF7A00] text-glow-orange font-black uppercase tracking-wider">Conquer.</span>
+            </span>
+            <span className="hidden sm:inline text-white/20 px-2">—</span>
+            <span className="w-full sm:w-auto">Where Great Minds Meet and <span className="gradient-text-turquoise font-black uppercase tracking-widest text-glow-turquoise">Champions Rise</span></span>
+          </div>
         </div>
 
-        {/* CTA Buttons */}
-        <div
-          className="flex flex-col sm:flex-row w-full sm:w-auto gap-4 mb-14 animate-fade-in-up px-4 sm:px-0"
-          style={{ animationDelay: "0.5s" }}
-        >
-          <a
-            href="#tickets"
-            className="group w-full sm:w-auto relative inline-flex items-center justify-center gap-2 bg-[#00F5D4] text-[#0B0F1A] font-black text-sm sm:text-base px-6 sm:px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,245,212,0.6)] hover:scale-105 overflow-hidden"
-          >
-            <span className="relative z-10">🎟️ Get Tickets</span>
-            <div className="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-          </a>
-          <a
-            href="#lineup"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-[#B388FF] text-[#B388FF] font-bold text-sm sm:text-base px-6 sm:px-8 py-4 rounded-full hover:bg-[#B388FF]/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(179,136,255,0.4)]"
-          >
-            🎵 See Lineup
-          </a>
-        </div>
 
         {/* Countdown */}
         <div

@@ -23,7 +23,7 @@ function useCountdown(targetDate: Date) {
   return timeLeft;
 }
 
-const eventDate = new Date("2026-06-27T15:00:00+07:00"); // Tanggal event: 27 Juni 2026
+const eventDate = new Date("2026-06-06T09:00:00+07:00"); // Tanggal event: 6 Juni 2026
 
 function BigBlock({ value, label }: { value: number; label: string }) {
   return (
@@ -112,15 +112,6 @@ export default function CountdownSection() {
           <BigBlock value={timeLeft.seconds} label="Detik" />
         </div>
 
-        {/* CTA */}
-        <div className="mt-14">
-          <a
-            href="#tickets"
-            className="inline-flex items-center gap-3 bg-[#FF7A00] text-white font-black text-lg px-10 py-5 rounded-full hover:bg-[#FF7A00]/90 transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,122,0,0.5)] hover:scale-105 glow-orange"
-          >
-            🎟️ Amankan Spotmu Sekarang
-          </a>
-        </div>
       </div>
     </section>
   );

@@ -35,15 +35,17 @@ export default function AboutSection() {
           {/* Text */}
           <div className="space-y-6">
             <p className="text-xl sm:text-2xl text-white font-light leading-relaxed">
-              FTIK FEST adalah festival musik kampus yang memadukan{" "}
-              <span className="text-[#00F5D4] font-bold">musik</span>,{" "}
-              <span className="text-[#B388FF] font-bold">kreativitas</span>, dan{" "}
-              <span className="text-[#FF7A00] font-bold">kultur anak muda</span> dalam satu
-              malam yang nggak bakal terlupakan.
+              Ruang bagi <span className="text-[#00F5D4] font-bold">generasi muda</span> untuk berani mencoba, menunjukkan{" "}
+              <span className="text-[#B388FF] font-bold">potensi terbaik</span>, dan membuktikan diri dalam{" "}
+              <span className="text-[#FF7A00] font-bold">semangat kompetisi</span> yang positif.
+            </p>
+            <p className="text-base sm:text-lg text-[#E0F7FF]/90 leading-relaxed">
+              Dengan energi, kreativitas, dan keberanian untuk melampaui batas, acara ini menjadi tempat bertemunya ide-ide hebat dan semangat juara karena di sinilah{" "}
+              <span className="italic font-medium">great minds meet and </span>
+              <span className="gradient-text-turquoise font-black uppercase tracking-wider">champions rise.</span>
             </p>
             <p className="text-[#E0F7FF]/60 leading-relaxed">
-              Dibangun oleh mahasiswa, untuk semua orang yang percaya bahwa musik punya
-              kekuatan untuk menyatukan. Bukan sekadar konser — ini adalah perayaan.
+              Dibangun oleh mahasiswa, FTIK FEST hadir sebagai wadah sportivitas dan hiburan bagi semua orang. Bukan sekadar kompetisi — ini adalah perayaan kebersamaan.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               {[
@@ -66,9 +68,9 @@ export default function AboutSection() {
           {/* Stats */}
           <div className="grid grid-cols-2 gap-4">
             {[
-              { number: "5000+", label: "Kapasitas Penonton", color: "#00F5D4" },
-              { number: "6", label: "Artis Tampil", color: "#B388FF" },
-              { number: "1", label: "Malam Epik", color: "#FF7A00" },
+              { number: "1000+",label: "Pendaftar", color: "#00F5D4" },
+              { number: "4", label: "Rangkaian Acara", color: "#B388FF" },
+              { number: "1", label: "Glory Cup", color: "#FF7A00" },
               { number: "∞", label: "Kenangan", color: "#00F5D4" },
             ].map((stat) => (
               <div

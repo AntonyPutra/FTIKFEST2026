@@ -1,13 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import EventInfoSection from "./EventInfoSection";
-import LineupSection from "./LineupSection";
-import TicketSection from "./TicketSection";
 import FnBSection from "./FnBSection";
 
 export default function ActivitiesSection() {
-  type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "closing";
+  type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "glory-cup";
+
+  interface Competition {
+    name: string;
+    pamphlet: string;
+    barcode: string;
+    link: string;
+  }
 
   const activities: Array<{
     id: ActivityId;
@@ -18,50 +24,82 @@ export default function ActivitiesSection() {
     highlights: string[];
     icon: string;
     color: string;
+    pamphlet: string;
+    barcode: string;
+    link: string;
+    links?: Array<{ label: string; url: string }>;
+    competitions?: Competition[];
   }> = [
     {
       id: "sgc",
       title: "SGC",
       subtitle: "(Student Goes to Campus)",
-      shortDesc: "Kegiatan pengenalan dunia perkuliahan dan kampus.",
-      fullDesc: "Student Goes to Campus (SGC) adalah program yang dirancang khusus untuk memperkenalkan siswa SMA/SMK sederajat pada serunya kehidupan kampus. Peserta akan diajak untuk tur keliling fakultas, merasakan suasana perkuliahan sungguhan, serta mendapatkan tips masuk perguruan tinggi dan sesi mentoring langsung dari dosen maupun mahasiswa inspiratif.",
-      highlights: ["Campus Tour", "Simulasi Perkuliahan", "Mentoring & Sharing Session"],
+      shortDesc: "Informasi kegiatan akan segera hadir.",
+      fullDesc: "Detail kegiatan Student Goes to Campus (SGC) sedang dalam tahap persiapan. Kami akan segera memperbarui informasi mengenai jadwal, pendaftaran, dan rangkaian acara menarik lainnya. Pantau terus update terbaru kami!",
+      highlights: ["Coming Soon", "Informasi Segera Hadir", "Stay Tuned"],
       icon: "🏛️",
       color: "#00F5D4",
+      pamphlet: "", 
+      barcode: "", 
+      link: "#", 
     },
     {
       id: "dekan-cup",
       title: "Dekan Cup",
       subtitle: "Ajang Kompetisi",
       shortDesc: "Ajang unjuk bakat dan sportivitas melalui 4 cabang perlombaan.",
-      fullDesc: "Dekan Cup merupakan kompetisi bergengsi antar mahasiswa dan SMA/SMK yang terbagi dalam dua kategori utama: Akademik dan Non-Akademik. Pada kategori akademik, kamu bisa mengasah kreativitas lewat lomba Infografis dan kemampuan bercerita melalui Story Telling. Sementara itu di kategori non-akademik, tersedia kompetisi Futsal yang seru (terbatas 16 tim) dan kompetisi Band untuk unjuk aksi panggung musikalmu!",
-      highlights: ["Kategori Akademik: Infografis & Story Telling", "Kategori Non-Akademik: Futsal (16 Teams) & Band", "Trophy, Sertifikat, & Uang Pembinaan"],
+      fullDesc: "Dekan Cup merupakan kompetisi bergengsi antar mahasiswa dan SMA/SMK yang terbagi dalam dua kategori utama: Akademik dan Non-Akademik. Pada kategori akademik, kamu bisa mengasah kreativitas lewat lomba Infografis dan kemampuan bercerita melalui Story Telling. Sementara itu di kategori non-akademik, ada kompetisi Band untuk unjuk aksi panggung musikalmu!",
+      highlights: ["Kategori Akademik: Infografis & Story Telling", "Kategori Non-Akademik: Band", "Trophy, Sertifikat, & Uang Pembinaan"],
       icon: "🏆",
       color: "#B388FF",
+      pamphlet: "", 
+      barcode: "", 
+      link: "#",
+      competitions: [
+        {
+          name: "Lomba Infografis",
+          pamphlet: "/Poster Infografis.png",
+          barcode: "/Pendaftaran Lomba Infografis - Dekan Cup FTIK 2026.png",
+          link: "https://forms.gle/NKCJVAhdQ1CFKB4r9"
+        },
+        {
+          name: "Lomba Story Telling",
+          pamphlet: "/STORY TELLING 2.png",
+          barcode: "/Pendaftaran Lomba Storytelling - Dekan Cup FTIK 2026.png",
+          link: "https://forms.gle/r4uGLMKKgkVtFXAC6"
+        }
+      ]
     },
     {
       id: "talkshow",
       title: "Talkshow",
       subtitle: "Sesi Seminar",
-      shortDesc: "Sesi interaktif dengan narasumber ternama Nasional.",
-      fullDesc: "Talkshow nasional yang menghadirkan tokoh-tokoh muda inspiratif, entrepreneur sukses, dan public figure ternama. Acara ini mengangkat tema-tema yang relevan dengan tantangan Gen-Z masa kini: mulai dari personal branding, inovasi digital, peluang karir, hingga kesehatan mental. Sesi ini dikemas interaktif dengan diskusi dan Q&A santai.",
-      highlights: ["Narasumber Skala Nasional", "Sesi Tanya Jawab Eksklusif", "Sertifikat & Doorprize Menarik"],
+      shortDesc: "Informasi sesi talkshow akan segera hadir.",
+      fullDesc: "Informasi detail mengenai Talkshow FTIK FEST 2026, termasuk narasumber nasional dan tema diskusi, sedang dalam penyusunan. Kami akan segera merilis detail lengkapnya untuk kamu. Jangan sampai ketinggalan!",
+      highlights: ["Coming Soon", "Update Segera Hadir", "Stay Tuned"],
       icon: "🎤",
       color: "#FF7A00",
+      pamphlet: "", 
+      barcode: "", 
+      link: "#", 
     },
     {
-      id: "closing",
-      title: "Closing Ceremony",
-      subtitle: "Festival Puncak",
-      shortDesc: "Puncak acara festival musik meriah sebagai penutup.",
-      fullDesc: "Puncak kemeriahan rangkaian kegiatan FTIK FEST 2026! Di malam ini, kita akan merayakan awarding ceremony para pemenang Dekan Cup sekaligus hanyut dalam festival musik spektakuler. Menghadirkan deretan Guest Star papan atas nasional, DJ set epik, serta tenant F&B terbaik di Semarang. Bersiaplah untuk sing-along dan loncat bareng di malam yang tak terlupakan ini!",
-      highlights: ["Penyerahan Hadiah & Awarding", "Konser Live Music Guest Star", "Spectacular Sound & Lighting Show"],
-      icon: "🎉",
+      id: "glory-cup",
+      title: "Glory Cup",
+      subtitle: "Turnamen Futsal",
+      shortDesc: "Informasi turnamen puncak akan segera hadir.",
+      fullDesc: "Persiapan untuk Glory Cup sebagai puncak acara FTIK FEST 2026 sedang berlangsung. Informasi mengenai pendaftaran tim, kualifikasi, dan hadiah menarik akan segera kami informasikan melalui platform resmi kami.",
+      highlights: ["Coming Soon", "Grand Closing Perkembang", "Stay Tuned"],
+      icon: "⚽",
       color: "#00F5D4",
+      pamphlet: "", 
+      barcode: "", 
+      link: "#", 
     },
   ];
 
   const [activeTab, setActiveTab] = useState(activities[0]);
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
   return (
     <section id="activities" className="relative py-24 overflow-hidden">
@@ -148,8 +186,8 @@ export default function ActivitiesSection() {
             }}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="space-y-8">
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-5xl">{activeTab.icon}</span>
@@ -163,24 +201,165 @@ export default function ActivitiesSection() {
                 >
                   {activeTab.subtitle}
                 </p>
-                <p className="text-[#E0F7FF]/90 text-lg sm:text-xl leading-relaxed font-light">
+                <p className="text-[#E0F7FF]/90 text-lg sm:text-xl leading-relaxed font-light mb-8">
                   {activeTab.fullDesc}
                 </p>
+
+                <div className="space-y-4 bg-black/20 rounded-2xl p-6 border border-white/5 mb-8">
+                  <h4 className="text-white text-xl font-bold flex items-center gap-2">
+                    <span style={{ color: activeTab.color }}>✨</span> Highlight Kegiatan:
+                  </h4>
+                  <ul className="space-y-3">
+                    {activeTab.highlights.map((highlight: string, idx: number) => (
+                      <li key={idx} className="flex flex-row items-baseline gap-3">
+                        <span className="mt-1" style={{ color: activeTab.color }}>✦</span>
+                        <span className="text-[#E0F7FF]/90 text-base">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Registration Buttons */}
+                  {activeTab.links && activeTab.links.map((lnk, i) => (
+                    <a
+                      key={i}
+                      href={lnk.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 font-black text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
+                      style={{ 
+                        backgroundColor: activeTab.color, 
+                        color: '#0B0F1A',
+                        boxShadow: `0 0 25px ${activeTab.color}60`
+                      }}
+                    >
+                      🔗 {lnk.label}
+                    </a>
+                  ))}
+                  {activeTab.link && activeTab.link !== "#" && (
+                    <a
+                      href={activeTab.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 font-black text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
+                      style={{ 
+                        backgroundColor: activeTab.color, 
+                        color: '#0B0F1A',
+                        boxShadow: `0 0 25px ${activeTab.color}60`
+                      }}
+                    >
+                      🔗 Daftar {activeTab.title} Sekarang
+                    </a>
+                  )}
               </div>
             </div>
 
-            <div className="space-y-4 bg-black/20 rounded-2xl p-6 sm:p-8 border border-white/5">
-              <h4 className="text-white text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2">
-                <span style={{ color: activeTab.color }}>✨</span> Highlight Kegiatan:
-              </h4>
-              <ul className="space-y-4 text-left">
-                {activeTab.highlights.map((highlight: string, idx: number) => (
-                  <li key={idx} className="flex flex-row items-baseline gap-3">
-                    <span className="mt-1" style={{ color: activeTab.color }}>✦</span>
-                    <span className="text-[#E0F7FF]/90 text-base sm:text-lg">{highlight}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Assets Section */}
+            <div className="w-full">
+              {activeTab.competitions && activeTab.competitions.length > 0 ? (
+                <div className="space-y-12">
+                  {activeTab.competitions.map((comp, idx) => (
+                    <div key={idx} className="space-y-6">
+                      <div className="flex items-center gap-4">
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/10" />
+                        <h4 className="text-white font-black text-sm uppercase tracking-[0.3em]" style={{ color: activeTab.color }}>
+                           {comp.name}
+                        </h4>
+                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/10" />
+                      </div>
+                      
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
+                        {/* Pamphlet */}
+                        <div className="space-y-4">
+                          <p className="text-[#E0F7FF]/40 text-[10px] font-bold uppercase tracking-widest text-center">Poster {comp.name}</p>
+                          <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 group shadow-2xl">
+                              <Image
+                                src={comp.pamphlet}
+                                alt={`Poster ${comp.name}`}
+                                fill
+                                className="object-contain opacity-0 transition-opacity duration-500 cursor-zoom-in"
+                                onClick={() => setExpandedImage(comp.pamphlet)}
+                                onLoadingComplete={(img: HTMLImageElement) => img.classList.remove('opacity-0')}
+                              />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6 pointer-events-none">
+                              <p className="text-white text-xs font-medium">Poster Resmi {comp.name}</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Barcode & Link */}
+                        <div className="space-y-4">
+                          <p className="text-[#E0F7FF]/40 text-[10px] font-bold uppercase tracking-widest text-center">Scan QR {comp.name}</p>
+                          <div className="aspect-square relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-6 flex flex-col items-center justify-center group">
+                            <div className="w-full h-full relative">
+                              <Image
+                                src={comp.barcode}
+                                alt={`QR Code ${comp.name}`}
+                                fill
+                                className="object-contain opacity-0 transition-opacity duration-500 group-hover:scale-105 transition-transform"
+                                onLoadingComplete={(img: HTMLImageElement) => img.classList.remove('opacity-0')}
+                              />
+                            </div>
+                          </div>
+                          {/* Button below QR */}
+                          <a 
+                            href={comp.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="w-full py-4 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-center transition-all bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95"
+                            style={{ color: activeTab.color, borderColor: `${activeTab.color}30` }}
+                          >
+                            <span>🔗 Daftar {comp.name}</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  {/* Fallback Pamphlet */}
+                  <div className="space-y-4">
+                    <p className="text-[#E0F7FF]/40 text-[10px] font-bold uppercase tracking-widest text-center">Pamflet Acara</p>
+                    <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+                      {activeTab.pamphlet ? (
+                        <Image
+                          src={activeTab.pamphlet}
+                          alt="Pamflet"
+                          fill
+                          className="object-contain cursor-zoom-in"
+                          onClick={() => setExpandedImage(activeTab.pamphlet)}
+                        />
+                      ) : (
+                        <div className="text-center opacity-30">
+                          <span className="text-4xl block mb-2">🖼️</span>
+                          <p className="text-[10px] font-black uppercase tracking-widest" style={{ color: activeTab.color }}>Asset Coming Soon</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Fallback Barcode */}
+                  <div className="space-y-4">
+                    <p className="text-[#E0F7FF]/40 text-[10px] font-bold uppercase tracking-widest text-center">Scan QR</p>
+                    <div className="aspect-square relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center p-8">
+                      {activeTab.barcode ? (
+                        <Image
+                          src={activeTab.barcode}
+                          alt="Barcode"
+                          fill
+                          className="object-contain"
+                        />
+                      ) : (
+                        <div className="text-center opacity-30">
+                          <span className="text-4xl block mb-2">📱</span>
+                          <p className="text-[10px] font-black uppercase tracking-widest" style={{ color: activeTab.color }}>QR Coming Soon</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -189,16 +368,37 @@ export default function ActivitiesSection() {
       {/* Dynamic Activity Sections based on Selected Tab */}
       <div className="mt-8 relative z-10 w-full animate-fade-in">
         <EventInfoSection activityId={activeTab.id} />
-        {activeTab.id === "closing" && (
+        {activeTab.id === ("glory-cup" as ActivityId) && (
           <>
-            <LineupSection />
             <FnBSection />
           </>
         )}
-        {(activeTab.id === "dekan-cup" || activeTab.id === "closing") && (
-          <TicketSection activityId={activeTab.id} />
-        )}
       </div>
+
+      {/* Image Modal */}
+      {expandedImage && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-fade-in"
+          onClick={() => setExpandedImage(null)}
+        >
+          <div className="relative w-full max-w-4xl h-[90vh] flex items-center justify-center">
+            <button 
+              className="absolute -top-12 right-0 text-white hover:text-[#00F5D4] text-4xl"
+              onClick={() => setExpandedImage(null)}
+            >
+              ×
+            </button>
+            <div className="relative w-full h-full">
+              <Image
+                src={expandedImage as string}
+                alt="Expanded view"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

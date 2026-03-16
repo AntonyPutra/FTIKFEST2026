@@ -1,63 +1,63 @@
-type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "closing";
+type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "glory-cup";
 
 const ACTIVITY_INFO: Record<ActivityId, { items: any[]; map: any }> = {
   sgc: {
     items: [
-      { icon: "📅", label: "Tanggal", value: "Segera Diumumkan", note: "TBA", color: "#00F5D4" },
-      { icon: "🕐", label: "Waktu", value: "08.00 WIB - Selesai", note: "Datang tepat waktu", color: "#B388FF" },
-      { icon: "📍", label: "Venue", value: "Universitas Semarang", note: "Kampus USM", color: "#FF7A00" },
+      { icon: "📅", label: "Tanggal", value: "Coming Soon", note: "Juni 2026", color: "#00F5D4" },
+      { icon: "🕐", label: "Waktu", value: "TBA", note: "Stay tuned", color: "#B388FF" },
+      { icon: "📍", label: "Venue", value: "Segera Diumumkan", note: "Semarang", color: "#FF7A00" },
       { icon: "🎓", label: "Peserta", value: "Siswa SMA/SMK", note: "Sederajat", color: "#00F5D4" },
     ],
     map: {
-      name: "Universitas Semarang",
-      desc: "Jl. Soekarno Hatta, Tlogosari Kulon",
-      url: "https://maps.google.com/?q=Universitas+Semarang",
+      name: "Lokasi Segera Hadir",
+      desc: "Detail lokasi sedang dalam konfirmasi",
+      url: "#",
     },
   },
   "dekan-cup": {
     items: [
-      { icon: "📅", label: "Tanggal", value: "Segera Diumumkan", note: "TBA", color: "#00F5D4" },
-      { icon: "🏆", label: "Kategori", value: "Futsal, Basket, E-Sports", note: "Pendaftaran Dibuka", color: "#B388FF" },
-      { icon: "📍", label: "Venue", value: "Gelora USM", note: "USM Sport Center", color: "#FF7A00" },
+      { icon: "📅", label: "Tanggal", value: "7 Juni 2026", note: "Awarding Day", color: "#00F5D4" },
+      { icon: "🏆", label: "Kategori", value: "Infografis & Story Telling", note: "Akademik", color: "#B388FF" },
+      { icon: "📍", label: "Venue", value: "Lapangan Manunggal", note: "Semarang", color: "#FF7A00" },
       { icon: "🎓", label: "Peserta", value: "Mahasiswa & SMA/SMK", note: "Umum", color: "#00F5D4" },
     ],
     map: {
-      name: "Gelora USM",
-      desc: "USM Sport Center, Semarang",
-      url: "https://maps.google.com/?q=Gelanggang+Olahraga+(GELORA)+USM",
+      name: "GOR Manunggal Jati",
+      desc: "Semarang, Jawa Tengah",
+      url: "https://maps.google.com/?q=Lapangan+Manunggal+Semarang",
     },
   },
   talkshow: {
     items: [
-      { icon: "📅", label: "Tanggal", value: "Segera Diumumkan", note: "TBA", color: "#00F5D4" },
-      { icon: "🕐", label: "Waktu", value: "13.00 WIB - Selesai", note: "Registrasi ulang di tempat", color: "#B388FF" },
-      { icon: "📍", label: "Venue", value: "Auditorium USM", note: "Gedung V Lantai 6", color: "#FF7A00" },
+      { icon: "📅", label: "Tanggal", value: "Coming Soon", note: "Juni 2026", color: "#00F5D4" },
+      { icon: "🕐", label: "Waktu", value: "TBA", note: "Sesi Nasional", color: "#B388FF" },
+      { icon: "📍", label: "Venue", value: "Segera Diumumkan", note: "Semarang", color: "#FF7A00" },
       { icon: "🎓", label: "Peserta", value: "Mahasiswa & Umum", note: "Terbuka bagi semua", color: "#00F5D4" },
     ],
     map: {
-      name: "Auditorium USM",
-      desc: "Gedung V Lantai 6, Kampus USM",
-      url: "https://maps.google.com/?q=Universitas+Semarang",
+      name: "Lokasi Segera Hadir",
+      desc: "Detail lokasi sedang dalam konfirmasi",
+      url: "#",
     },
   },
-  closing: {
+  "glory-cup": {
     items: [
-      { icon: "📅", label: "Tanggal", value: "27 Juni 2026", note: "Sabtu • Save the date!", color: "#00F5D4" },
-      { icon: "🕐", label: "Buka Gerbang", value: "15.00 WIB", note: "Datang lebih awal", color: "#B388FF" },
-      { icon: "📍", label: "Venue", value: "Awan Costa", note: "POJ City, Bibir Pantai, Semarang 50144", color: "#FF7A00" },
+      { icon: "📅", label: "Tanggal", value: "Coming Soon", note: "Juni 2026", color: "#00F5D4" },
+      { icon: "🕐", label: "Buka Gerbang", value: "TBA", note: "Datang lebih awal", color: "#B388FF" },
+      { icon: "📍", label: "Venue", value: "Segera Diumumkan", note: "Semarang, Jawa Tengah", color: "#FF7A00" },
       { icon: "🎓", label: "Penonton", value: "Mahasiswa & Umum", note: "Semua kalangan welcome", color: "#00F5D4" },
       { icon: "🏙️", label: "Kota", value: "Semarang", note: "Jawa Tengah, Indonesia", color: "#B388FF" },
-      { icon: "🚌", label: "Akses", value: "Area Pantai Marina", note: "Parkir tersedia di kawasan POJ City", color: "#FF7A00" },
+      { icon: "🚌", label: "Akses", value: "TBA", note: "Informasi akses segera hadir", color: "#FF7A00" },
     ],
     map: {
-      name: "Awan Costa",
-      desc: "Kawasan Bibir Pantai, POJ City",
-      url: "https://maps.google.com/?q=Awan+Costa+POJ+City+Semarang",
+      name: "Lokasi Segera Hadir",
+      desc: "Detail lokasi sedang dalam konfirmasi",
+      url: "#",
     },
   },
 };
 
-export default function EventInfoSection({ activityId = "closing" }: { activityId?: ActivityId }) {
+export default function EventInfoSection({ activityId = "glory-cup" }: { activityId?: ActivityId }) {
   const data = ACTIVITY_INFO[activityId];
 
   return (
