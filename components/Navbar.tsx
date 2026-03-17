@@ -27,7 +27,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-start gap-8">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-8">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2 group">
           <Image

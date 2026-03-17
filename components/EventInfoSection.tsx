@@ -61,7 +61,7 @@ export default function EventInfoSection({ activityId = "glory-cup" }: { activit
   const data = ACTIVITY_INFO[activityId];
 
   return (
-    <div id="info" className="relative py-12 overflow-hidden w-full">
+    <div id="info" className="relative py-12 overflow-hidden w-full px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -83,9 +83,9 @@ export default function EventInfoSection({ activityId = "glory-cup" }: { activit
             {data.items.map((item: any, idx: number) => (
               <div
                 key={idx}
-                className="card-glass rounded-2xl p-5 group hover:border-[#00F5D4]/25 transition-all duration-300"
+                className="card-glass rounded-2xl p-6 group hover:border-[#00F5D4]/25 transition-all duration-300"
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-4 sm:gap-5">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0"
                     style={{ background: `${item.color}15` }}
@@ -94,13 +94,13 @@ export default function EventInfoSection({ activityId = "glory-cup" }: { activit
                   </div>
                   <div>
                     <p
-                      className="text-xs font-bold uppercase tracking-widest mb-1"
+                      className="text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1.5"
                       style={{ color: item.color }}
                     >
                       {item.label}
                     </p>
-                    <p className="text-white font-bold text-sm">{item.value}</p>
-                    <p className="text-[#E0F7FF]/40 text-xs mt-0.5">{item.note}</p>
+                    <p className="text-white font-bold text-sm sm:text-base leading-tight">{item.value}</p>
+                    <p className="text-[#E0F7FF]/40 text-xs mt-1">{item.note}</p>
                   </div>
                 </div>
               </div>

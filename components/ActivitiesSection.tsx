@@ -189,14 +189,14 @@ export default function ActivitiesSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div className="space-y-8">
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-5xl">{activeTab.icon}</span>
-                  <h3 className="text-4xl sm:text-5xl font-black text-white" style={{ fontFamily: "'Cinzel Decorative', serif", textShadow: `0 0 15px ${activeTab.color}50` }}>
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="text-4xl sm:text-5xl">{activeTab.icon}</span>
+                  <h3 className="text-3xl sm:text-5xl font-black text-white" style={{ fontFamily: "'Cinzel Decorative', serif", textShadow: `0 0 15px ${activeTab.color}50` }}>
                     {activeTab.title}
                   </h3>
                 </div>
                 <p
-                  className="text-base sm:text-lg font-bold uppercase tracking-[0.2em] mb-4"
+                  className="text-sm sm:text-lg font-bold uppercase tracking-[0.2em] mb-4"
                   style={{ color: activeTab.color }}
                 >
                   {activeTab.subtitle}
