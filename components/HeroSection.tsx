@@ -97,9 +97,9 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-4 py-24 max-w-5xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 py-16 sm:py-24 max-w-5xl mx-auto">
         {/* Badge */}
-        <div className="inline-flex max-w-full items-center gap-2 bg-[#00F5D4]/10 border border-[#00F5D4]/30 text-[#00F5D4] text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase px-4 sm:px-5 py-2 rounded-full mb-8 animate-fade-in-up whitespace-nowrap overflow-hidden text-ellipsis">
+        <div className="inline-flex max-w-full items-center gap-2 bg-[#00F5D4]/10 border border-[#00F5D4]/30 text-[#00F5D4] text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase px-4 sm:px-5 py-2 rounded-full mb-6 sm:mb-8 animate-fade-in-up whitespace-nowrap overflow-hidden text-ellipsis">
           <span className="w-2 h-2 rounded-full bg-[#00F5D4] shrink-0 animate-pulse" />
           <span className="truncate">Rise of the Champions</span>
         </div>
@@ -108,7 +108,7 @@ export default function HeroSection() {
 
         {/* Campus Festival Tag */}
         <div
-          className="text-[#00F5D4] text-xs sm:text-sm font-black tracking-[0.4em] sm:tracking-[0.8em] uppercase mb-4 animate-fade-in-up"
+          className="text-[#00F5D4] text-[10px] sm:text-sm font-black tracking-[0.3em] sm:tracking-[0.8em] uppercase mb-4 animate-fade-in-up"
           style={{ animationDelay: "0.2s" }}
         >
           Rise of the Champions
@@ -116,14 +116,14 @@ export default function HeroSection() {
 
         {/* Main Headline */}
         <h1
-          className="text-4xl sm:text-7xl md:text-9xl font-black tracking-tight text-white mb-6 animate-fade-in-up flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-8"
+          className="text-3xl sm:text-7xl md:text-9xl font-black tracking-tight text-white mb-6 animate-fade-in-up flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-8"
           style={{
             fontFamily: "'Cinzel Decorative', serif",
             animationDelay: "0.25s",
             textShadow: "0 0 40px rgba(0,245,212,0.3), 0 0 80px rgba(179,136,255,0.15)",
           }}
         >
-          <span className="flex items-center gap-4">
+          <span className="flex items-center gap-2 sm:gap-4">
             <span>FTIK</span>
             <span className="gradient-text-turquoise">FEST</span>
           </span>
@@ -132,17 +132,17 @@ export default function HeroSection() {
 
         {/* Subheadline */}
         <div
-          className="text-base sm:text-xl md:text-2xl text-[#E0F7FF]/80 max-w-4xl mb-6 leading-relaxed animate-fade-in-up font-medium"
+          className="text-sm sm:text-xl md:text-2xl text-[#E0F7FF]/80 max-w-4xl mb-6 leading-relaxed animate-fade-in-up font-medium px-2"
           style={{ animationDelay: "0.35s" }}
         >
-          <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2">
-            <span className="w-full sm:w-auto">
+          <div className="flex flex-wrap justify-center items-center gap-x-2 sm:gap-x-3 gap-y-1 sm:gap-y-2">
+            <span className="w-full sm:w-auto flex justify-center gap-2">
               <span className="text-[#00F5D4] text-glow-turquoise font-black uppercase tracking-wider">Explore.</span>{" "}
               <span className="text-[#B388FF] text-glow-lavender font-black uppercase tracking-wider">Compete.</span>{" "}
               <span className="text-[#FF7A00] text-glow-orange font-black uppercase tracking-wider">Conquer.</span>
             </span>
             <span className="hidden sm:inline text-white/20 px-2">—</span>
-            <span className="w-full sm:w-auto">Where Great Minds Meet and <span className="gradient-text-turquoise font-black uppercase tracking-widest text-glow-turquoise">Champions Rise</span></span>
+            <span className="w-full sm:w-auto">Where Great Minds Meet and <span className="gradient-text-turquoise font-black uppercase tracking-widest text-glow-turquoise block sm:inline">Champions Rise</span></span>
           </div>
         </div>
 
@@ -168,9 +168,9 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-xs text-[#E0F7FF] tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-[#00F5D4] to-transparent animate-pulse" />
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2 opacity-30 sm:opacity-40">
+        <span className="text-[10px] sm:text-xs text-[#E0F7FF] tracking-widest uppercase">Scroll</span>
+        <div className="w-px h-8 sm:h-12 bg-gradient-to-b from-[#00F5D4] to-transparent animate-pulse" />
       </div>
     </section>
   );

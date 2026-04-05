@@ -27,7 +27,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-8">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2 group">
           <Image
@@ -47,7 +47,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-6">
+        <ul className="hidden md:flex items-center gap-6 ml-auto">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
