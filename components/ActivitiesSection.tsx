@@ -47,28 +47,14 @@ export default function ActivitiesSection() {
       id: "dekan-cup",
       title: "Dekan Cup",
       subtitle: "Ajang Kompetisi",
-      shortDesc: "Ajang unjuk bakat dan sportivitas melalui 4 cabang perlombaan.",
-      fullDesc: "Dekan Cup merupakan kompetisi bergengsi antar mahasiswa dan SMA/SMK yang terbagi dalam dua kategori utama: Akademik dan Non-Akademik. Pada kategori akademik, kamu bisa mengasah kreativitas lewat lomba Infografis dan kemampuan bercerita melalui Story Telling. Sementara itu di kategori non-akademik, ada kompetisi Band untuk unjuk aksi panggung musikalmu!",
-      highlights: ["Kategori Akademik: Infografis & Story Telling", "Kategori Non-Akademik: Band", "Trophy, Sertifikat, & Uang Pembinaan"],
+      shortDesc: "Informasi perlombaan akan segera hadir.",
+      fullDesc: "Persiapan untuk Dekan Cup sebagai ajang kompetisi bergengsi FTIK FEST 2026 sedang berlangsung. Informasi mengenai kategori lomba, syarat pendaftaran, dan teknis perlombaan akan segera kami informasikan melalui platform resmi kami.",
+      highlights: ["Coming Soon", "Informasi Segera Hadir", "Stay Tuned"],
       icon: "🏆",
       color: "#B388FF",
       pamphlet: "", 
       barcode: "", 
       link: "#",
-      competitions: [
-        {
-          name: "Lomba Infografis",
-          pamphlet: "/Poster Infografis.png",
-          barcode: "/Pendaftaran Lomba Infografis - Dekan Cup FTIK 2026.png",
-          link: "https://forms.gle/NKCJVAhdQ1CFKB4r9"
-        },
-        {
-          name: "Lomba Story Telling",
-          pamphlet: "/STORY TELLING 2.png",
-          barcode: "/Pendaftaran Lomba Storytelling - Dekan Cup FTIK 2026.png",
-          link: "https://forms.gle/r4uGLMKKgkVtFXAC6"
-        }
-      ]
     },
     {
       id: "talkshow",
