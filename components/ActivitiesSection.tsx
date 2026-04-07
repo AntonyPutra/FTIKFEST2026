@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import EventInfoSection from "./EventInfoSection";
 import FnBSection from "./FnBSection";
+import SponsorSection from "./SponsorSection";
 
 export default function ActivitiesSection() {
   type ActivityId = "sgc" | "dekan-cup" | "HSC" | "glory-cup";
@@ -364,6 +365,7 @@ export default function ActivitiesSection() {
             <FnBSection />
           </>
         )}
+        <SponsorSection activityId={activeTab.id} />
       </div>
 
       {/* Image Modal */}

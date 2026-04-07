@@ -17,12 +17,26 @@ const SPONSOR_TIERS = [
   },
 ];
 
-const MEDIA_PARTNER_SLOTS = 6;
+type ActivityId = "sgc" | "dekan-cup" | "HSC" | "glory-cup";
+
+const MEDIA_PARTNERS = [
+  { name: "FTP", logo: "/Logo Media Partner/Dekan Cup/FTP.png", events: ["dekan-cup"] },
+  { name: "BEM FH", logo: "/Logo Media Partner/Dekan Cup/LOGO BEM FH.png", events: ["dekan-cup"] },
+  { name: "Konco Event", logo: "/Logo Media Partner/Dekan Cup/LOGO KONCO EVENT.png", events: ["dekan-cup", "HSC", "glory-cup"] },
+  { name: "Konser Raya", logo: "/Logo Media Partner/Dekan Cup/LOGO KONSER RAYA.png", events: ["dekan-cup", "HSC", "glory-cup"] },
+  { name: "MusicMusik", logo: "/Logo Media Partner/Dekan Cup/LOGO MUSICMUSIK.png", events: ["dekan-cup", "HSC", "glory-cup"] },
+  { name: "Noisenesia", logo: "/Logo Media Partner/Dekan Cup/LOGO NOISENESIA.png", events: ["dekan-cup", "HSC", "glory-cup"] },
+  { name: "Ruang Event ID", logo: "/Logo Media Partner/Dekan Cup/LOGO RUANG EVENT ID (PUTIH).png", events: ["dekan-cup", "HSC", "glory-cup"] },
+];
 
 const SPONSOR_WA = "https://api.whatsapp.com/send/?phone=%2B6285806254318&text=&type=phone_number&app_absent=0";
 const MEDIA_WA = "https://api.whatsapp.com/send/?phone=%2B6285801304384&text=&type=phone_number&app_absent=0";
 
-export default function SponsorSection() {
+import Image from "next/image";
+
+export default function SponsorSection({ activityId = "glory-cup" }: { activityId?: ActivityId }) {
+  const filteredPartners = MEDIA_PARTNERS.filter(p => p.events.includes(activityId));
+
   return (
     <section id="sponsors" className="relative py-24 overflow-hidden">
       <div
@@ -96,23 +110,68 @@ export default function SponsorSection() {
           ))}
         </div>
 
-        {/* Media Partners */}
-        <div className="mb-14">
-          <h3 className="text-center text-[#E0F7FF]/40 text-xs tracking-[0.3em] uppercase font-bold mb-8">
-            Media Partners
-          </h3>
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
-            {Array.from({ length: MEDIA_PARTNER_SLOTS }).map((_, i) => (
-              <div
-                key={i}
-                className="rounded-xl card-glass border border-[#B388FF]/15 flex items-center justify-center aspect-video hover:border-[#B388FF]/30 transition-all duration-300"
-              >
-                <span className="text-[#E0F7FF]/20 text-xs font-bold tracking-wider">
-                  LOGO
-                </span>
-                {/* TODO: Replace with actual media partner logo */}
-              </div>
-            ))}
+        {/* Media Partners Section */}
+        <div className="mt-20 pt-10 border-t border-white/5 mb-24">
+          <div className="flex flex-col items-center gap-12">
+            <span className="text-[10px] font-black text-[#E0F7FF]/30 uppercase tracking-[0.5em]">
+              Media Partners
+            </span>
+            
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+              {filteredPartners.length > 0 ? (
+                filteredPartners.map((partner, i) => (
+                  <div
+                    key={i}
+                    className="relative group w-32 sm:w-44 h-24 sm:h-28 rounded-2xl card-glass border border-white/5 flex items-center justify-center p-4 sm:p-6 overflow-hidden transition-all duration-500 hover:border-[#B388FF]/30 hover:shadow-[0_0_30px_rgba(179,136,255,0.1)]"
+                  >
+                    {/* Logo Image */}
+                    <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-110">
+                      <Image
+                        src={partner.logo}
+                        alt={`${partner.name} Logo`}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+
+                    {/* Name Overlay (Smooth Fade Gradient) */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col justify-end p-4">
+                      <p className="text-[10px] font-black text-white text-center leading-tight tracking-wider transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        {partner.name}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                // Placeholder slots for SGC or others without partners yet
+                (() => {
+                  const themeColor = {
+                    "sgc": "#00F5D4",
+                    "dekan-cup": "#B388FF",
+                    "HSC": "#FF7A00",
+                    "glory-cup": "#00F5D4"
+                  }[activityId] || "#00F5D4";
+
+                  return Array.from({ length: 6 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-32 sm:w-44 h-24 sm:h-28 rounded-2xl card-glass border flex items-center justify-center p-4 sm:p-6 transition-all duration-500"
+                      style={{ 
+                        borderColor: `${themeColor}20`,
+                        boxShadow: `inset 0 0 20px ${themeColor}05`
+                      }}
+                    >
+                      <span 
+                        className="text-[10px] font-black tracking-widest opacity-20"
+                        style={{ color: themeColor }}
+                      >
+                        LOGO
+                      </span>
+                    </div>
+                  ));
+                })()
+              )}
+            </div>
           </div>
         </div>
 
