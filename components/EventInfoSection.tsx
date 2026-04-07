@@ -29,9 +29,9 @@ const ACTIVITY_INFO: Record<ActivityId, { items: any[]; map: any }> = {
   },
   HSC: {
     items: [
-      { icon: "📅", label: "Tanggal", value: "13 Mei 2026", note: "High School Clash", color: "#00F5D4" },
-      { icon: "🕐", label: "Waktu", value: "06.00 WIB", note: "Selesai", color: "#B388FF" },
-      { icon: "📍", label: "Venue", value: "Auditorium Ir. Widjatmoko", note: "Semarang", color: "#FF7A00" },
+      { icon: "📅", label: "Tanggal", value: "Coming Soon", note: "Mei 2026", color: "#00F5D4" },
+      { icon: "🕐", label: "Waktu", value: "TBA", note: "Stay tuned", color: "#B388FF" },
+      { icon: "📍", label: "Venue", value: "Segera Diumumkan", note: "Semarang", color: "#FF7A00" },
       { icon: "🎓", label: "Peserta", value: "Siswa SMA/SMK/MA", note: "Se-Kota Semarang", color: "#00F5D4" },
     ],
     map: {
