@@ -47,14 +47,22 @@ export default function ActivitiesSection() {
       id: "dekan-cup",
       title: "Dekan Cup",
       subtitle: "Ajang Kompetisi",
-      shortDesc: "Informasi perlombaan akan segera hadir.",
-      fullDesc: "Persiapan untuk Dekan Cup sebagai ajang kompetisi bergengsi FTIK FEST 2026 sedang berlangsung. Informasi mengenai kategori lomba, syarat pendaftaran, dan teknis perlombaan akan segera kami informasikan melalui platform resmi kami.",
-      highlights: ["Coming Soon", "Informasi Segera Hadir", "Stay Tuned"],
+      shortDesc: "Tunjukkan skill terbaikmu dalam turnamen bergengsi Mobile Legends FTIK FEST 2026.",
+      fullDesc: "Dekan Cup kembali hadir dengan semangat kompetisi yang lebih membara! Tahun ini, kami menghadirkan Turnamen Mobile Legends sebagai panggung utama bagi para pejuang Land of Dawn. Siapkan tim terbaikmu, susun strategi kemenangan, dan rebut gelar juara serta total prize pool jutaan rupiah!",
+      highlights: ["Total Prize Pool Rp 1.500.000+", "Format Tournament Competitive", "Open for All Students"],
       icon: "🏆",
       color: "#B388FF",
       pamphlet: "", 
       barcode: "", 
       link: "#",
+      competitions: [
+        {
+          name: "Turnamen Mobile Legends Dekan Cup 2026!",
+          pamphlet: "/Poster Lomba ML.png",
+          barcode: "/QR Lomba Ml.png",
+          link: "https://forms.gle/vS2BataW8KvrCvMH6"
+        },
+      ]
     },
     {
       id: "talkshow",

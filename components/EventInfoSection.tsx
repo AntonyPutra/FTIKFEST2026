@@ -16,15 +16,15 @@ const ACTIVITY_INFO: Record<ActivityId, { items: any[]; map: any }> = {
   },
   "dekan-cup": {
     items: [
-      { icon: "📅", label: "Tanggal", value: "7 Juni 2026", note: "Awarding Day", color: "#00F5D4" },
-      { icon: "🏆", label: "Kategori", value: "Infografis & Story Telling", note: "Akademik", color: "#B388FF" },
-      { icon: "📍", label: "Venue", value: "Lapangan Manunggal", note: "Semarang", color: "#FF7A00" },
+      { icon: "📅", label: "Tanggal", value: "21 Mei 2026", note: "Turnamen Mobile Legend", color: "#00F5D4" },
+      { icon: "🏆", label: "Kategori", value: "Mobile Legend", note: "Turnamen", color: "#B388FF" },
+      { icon: "📍", label: "Venue", value: "Universitas Semarang", note: "Semarang", color: "#FF7A00" },
       { icon: "🎓", label: "Peserta", value: "Mahasiswa & SMA/SMK", note: "Umum", color: "#00F5D4" },
     ],
     map: {
-      name: "GOR Manunggal Jati",
+      name: "Universitas Semarang",
       desc: "Semarang, Jawa Tengah",
-      url: "https://maps.google.com/?q=Lapangan+Manunggal+Semarang",
+      url: "https://maps.google.com/?q=Universitas+Semarang",
     },
   },
   talkshow: {
