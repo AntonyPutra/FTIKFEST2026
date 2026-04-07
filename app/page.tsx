@@ -8,13 +8,17 @@ import SponsorSection from "@/components/SponsorSection";
 import FAQSection from "@/components/FAQSection";
 import SocialSection from "@/components/SocialSection";
 import Footer from "@/components/Footer";
-export default function Home() {
+import { fetchActivities } from "@/lib/sheets";
+
+export default async function Home() {
+  const activities = await fetchActivities();
+
   return (
     <main>
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <ActivitiesSection />
+      <ActivitiesSection initialActivities={activities} />
       <CountdownSection />
       <SponsorSection />
       <FAQSection />

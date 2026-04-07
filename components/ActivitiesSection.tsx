@@ -4,32 +4,24 @@ import { useState } from "react";
 import Image from "next/image";
 import EventInfoSection from "./EventInfoSection";
 import FnBSection from "./FnBSection";
+import { ActivityData } from "@/lib/sheets";
 
-export default function ActivitiesSection() {
+interface Competition {
+  name: string;
+  pamphlet: string;
+  barcode: string;
+  link: string;
+}
+
+interface Activity extends ActivityData {
+  links?: Array<{ label: string; url: string }>;
+  competitions?: Competition[];
+}
+
+export default function ActivitiesSection({ initialActivities }: { initialActivities?: ActivityData[] }) {
   type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "glory-cup";
 
-  interface Competition {
-    name: string;
-    pamphlet: string;
-    barcode: string;
-    link: string;
-  }
-
-  const activities: Array<{
-    id: ActivityId;
-    title: string;
-    subtitle: string;
-    shortDesc: string;
-    fullDesc: string;
-    highlights: string[];
-    icon: string;
-    color: string;
-    pamphlet: string;
-    barcode: string;
-    link: string;
-    links?: Array<{ label: string; url: string }>;
-    competitions?: Competition[];
-  }> = [
+  const defaultActivities: Activity[] = [
     {
       id: "sgc",
       title: "SGC",
@@ -91,6 +83,31 @@ export default function ActivitiesSection() {
       link: "#", 
     },
   ];
+
+  // Merge Google Sheets data with defaults
+  const activities = defaultActivities.map(defaultAct => {
+    const sheetAct = initialActivities?.find(a => a.id === defaultAct.id);
+    if (sheetAct) {
+      // Helper to check if a value is a valid override
+      const isValid = (val: string) => val && val.trim() !== "" && val !== "[URL]" && val !== "#";
+
+      return {
+        ...defaultAct,
+        title: isValid(sheetAct.title) ? sheetAct.title : defaultAct.title,
+        subtitle: isValid(sheetAct.subtitle) ? sheetAct.subtitle : defaultAct.subtitle,
+        shortDesc: isValid(sheetAct.shortDesc) ? sheetAct.shortDesc : defaultAct.shortDesc,
+        fullDesc: isValid(sheetAct.fullDesc) ? sheetAct.fullDesc : defaultAct.fullDesc,
+        highlights: sheetAct.highlights.length > 0 ? sheetAct.highlights : defaultAct.highlights,
+        icon: isValid(sheetAct.icon) ? sheetAct.icon : defaultAct.icon,
+        color: isValid(sheetAct.color) ? sheetAct.color : defaultAct.color,
+        pamphlet: isValid(sheetAct.pamphlet) ? sheetAct.pamphlet : defaultAct.pamphlet,
+        barcode: isValid(sheetAct.barcode) ? sheetAct.barcode : defaultAct.barcode,
+        link: isValid(sheetAct.link) ? sheetAct.link : defaultAct.link,
+        competitions: defaultAct.competitions 
+      };
+    }
+    return defaultAct;
+  });
 
   const [activeTab, setActiveTab] = useState(activities[0]);
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
@@ -361,7 +378,7 @@ export default function ActivitiesSection() {
 
       {/* Dynamic Activity Sections based on Selected Tab */}
       <div className="mt-8 relative z-10 w-full animate-fade-in">
-        <EventInfoSection activityId={activeTab.id} />
+        <EventInfoSection activityId={activeTab.id as ActivityId} />
         {activeTab.id === ("glory-cup" as ActivityId) && (
           <>
             <FnBSection />
