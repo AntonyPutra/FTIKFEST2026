@@ -6,7 +6,7 @@ import EventInfoSection from "./EventInfoSection";
 import FnBSection from "./FnBSection";
 
 export default function ActivitiesSection() {
-  type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "glory-cup";
+  type ActivityId = "sgc" | "dekan-cup" | "HSC" | "glory-cup";
 
   interface Competition {
     name: string;
@@ -30,67 +30,67 @@ export default function ActivitiesSection() {
     links?: Array<{ label: string; url: string }>;
     competitions?: Competition[];
   }> = [
-    {
-      id: "sgc",
-      title: "SGC",
-      subtitle: "(Student Goes to Campus)",
-      shortDesc: "Informasi kegiatan akan segera hadir.",
-      fullDesc: "Detail kegiatan Student Goes to Campus (SGC) sedang dalam tahap persiapan. Kami akan segera memperbarui informasi mengenai jadwal, pendaftaran, dan rangkaian acara menarik lainnya. Pantau terus update terbaru kami!",
-      highlights: ["Coming Soon", "Informasi Segera Hadir", "Stay Tuned"],
-      icon: "🏛️",
-      color: "#00F5D4",
-      pamphlet: "", 
-      barcode: "", 
-      link: "#", 
-    },
-    {
-      id: "dekan-cup",
-      title: "Dekan Cup",
-      subtitle: "Ajang Kompetisi",
-      shortDesc: "Tunjukkan skill terbaikmu dalam turnamen bergengsi Mobile Legends FTIK FEST 2026.",
-      fullDesc: "Dekan Cup kembali hadir dengan semangat kompetisi yang lebih membara! Tahun ini, kami menghadirkan Turnamen Mobile Legends sebagai panggung utama bagi para pejuang Land of Dawn. Siapkan tim terbaikmu, susun strategi kemenangan, dan rebut gelar juara serta total prize pool jutaan rupiah!",
-      highlights: ["Total Prize Pool Rp 1.500.000+", "Format Tournament Competitive", "Open for All Students"],
-      icon: "🏆",
-      color: "#B388FF",
-      pamphlet: "", 
-      barcode: "", 
-      link: "#",
-      competitions: [
-        {
-          name: "Turnamen Mobile Legends Dekan Cup 2026!",
-          pamphlet: "/Poster Lomba ML.png",
-          barcode: "/QR Lomba Ml.png",
-          link: "https://forms.gle/vS2BataW8KvrCvMH6"
-        },
-      ]
-    },
-    {
-      id: "talkshow",
-      title: "Talkshow",
-      subtitle: "Sesi Seminar",
-      shortDesc: "Informasi sesi talkshow akan segera hadir.",
-      fullDesc: "Informasi detail mengenai Talkshow FTIK FEST 2026, termasuk narasumber nasional dan tema diskusi, sedang dalam penyusunan. Kami akan segera merilis detail lengkapnya untuk kamu. Jangan sampai ketinggalan!",
-      highlights: ["Coming Soon", "Update Segera Hadir", "Stay Tuned"],
-      icon: "🎤",
-      color: "#FF7A00",
-      pamphlet: "", 
-      barcode: "", 
-      link: "#", 
-    },
-    {
-      id: "glory-cup",
-      title: "Glory Cup",
-      subtitle: "Turnamen Futsal",
-      shortDesc: "Informasi turnamen puncak akan segera hadir.",
-      fullDesc: "Persiapan untuk Glory Cup sebagai puncak acara FTIK FEST 2026 sedang berlangsung. Informasi mengenai pendaftaran tim, kualifikasi, dan hadiah menarik akan segera kami informasikan melalui platform resmi kami.",
-      highlights: ["Coming Soon", "Grand Closing Perkembang", "Stay Tuned"],
-      icon: "⚽",
-      color: "#00F5D4",
-      pamphlet: "", 
-      barcode: "", 
-      link: "#", 
-    },
-  ];
+      {
+        id: "sgc",
+        title: "SGC",
+        subtitle: "(Student Goes to Campus)",
+        shortDesc: "Informasi kegiatan akan segera hadir.",
+        fullDesc: "Detail kegiatan Student Goes to Campus (SGC) sedang dalam tahap persiapan. Kami akan segera memperbarui informasi mengenai jadwal, pendaftaran, dan rangkaian acara menarik lainnya. Pantau terus update terbaru kami!",
+        highlights: ["Coming Soon", "Informasi Segera Hadir", "Stay Tuned"],
+        icon: "🏛️",
+        color: "#00F5D4",
+        pamphlet: "",
+        barcode: "",
+        link: "#",
+      },
+      {
+        id: "dekan-cup",
+        title: "Dekan Cup",
+        subtitle: "Ajang Kompetisi",
+        shortDesc: "Tunjukkan skill terbaikmu dalam turnamen bergengsi Mobile Legends FTIK FEST 2026.",
+        fullDesc: "Dekan Cup kembali hadir dengan semangat kompetisi yang lebih membara! Tahun ini, kami menghadirkan Turnamen Mobile Legends sebagai panggung utama bagi para pejuang Land of Dawn. Siapkan tim terbaikmu, susun strategi kemenangan, dan rebut gelar juara serta total prize pool jutaan rupiah!",
+        highlights: ["Total Prize Pool Rp 1.500.000+", "Format Tournament Competitive", "Open for All Students"],
+        icon: "🏆",
+        color: "#B388FF",
+        pamphlet: "",
+        barcode: "",
+        link: "#",
+        competitions: [
+          {
+            name: "Turnamen Mobile Legends Dekan Cup 2026!",
+            pamphlet: "/Poster Lomba ML.png",
+            barcode: "/QR Lomba Ml.png",
+            link: "https://forms.gle/vS2BataW8KvrCvMH6"
+          },
+        ]
+      },
+      {
+        id: "HSC",
+        title: "HSC SUPERNOVA",
+        subtitle: "Cerdas Cermat Modern",
+        shortDesc: "The Ultimate Battle of Wits: Kompetisi intelektual bergengsi untuk siswa SMA/SMK se-Kota Semarang.",
+        fullDesc: "HSC (High School Clash) Supernova 2026 mengusung tema 'The Ultimate Battle of Wits'. Kompetisi ini menantang 40 tim terbaik melalui 4 fase eliminasi: Phase 1 (Blitz Alpha & Omega) menggunakan sistem digital quiz, Phase 2 (Tabel Arena) untuk Top 10, Phase 3 (Case Challenge) berupa sesi studi kasus kreatif, dan puncaknya 'The Ultimate Clash' di panggung utama untuk menentukan juara sejati.",
+        highlights: ["Total Prize Pool Rp 1.500.000", "Digital Quiz System (Blitz Alpha & Omega)", "Case Challenge & Ultimate Clash Final"],
+        icon: "🧠",
+        color: "#FF7A00",
+        pamphlet: "",
+        barcode: "",
+        link: "#",
+      },
+      {
+        id: "glory-cup",
+        title: "Glory Cup",
+        subtitle: "Turnamen Futsal",
+        shortDesc: "Informasi turnamen puncak akan segera hadir.",
+        fullDesc: "Persiapan untuk Glory Cup sebagai puncak acara FTIK FEST 2026 sedang berlangsung. Informasi mengenai pendaftaran tim, kualifikasi, dan hadiah menarik akan segera kami informasikan melalui platform resmi kami.",
+        highlights: ["Coming Soon", "Grand Closing Perkembang", "Stay Tuned"],
+        icon: "⚽",
+        color: "#00F5D4",
+        pamphlet: "",
+        barcode: "",
+        link: "#",
+      },
+    ];
 
   const [activeTab, setActiveTab] = useState(activities[0]);
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
@@ -126,20 +126,18 @@ export default function ActivitiesSection() {
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item)}
-                className={`text-left rounded-2xl p-4 sm:p-6 transition-all duration-300 relative overflow-hidden flex flex-col items-center text-center group ${
-                  isActive
+                className={`text-left rounded-2xl p-4 sm:p-6 transition-all duration-300 relative overflow-hidden flex flex-col items-center text-center group ${isActive
                     ? "bg-white/10 border-2"
                     : "card-glass hover:border-[#00F5D4]/30 border border-white/5"
-                }`}
+                  }`}
                 style={{
                   borderColor: isActive ? item.color : undefined,
                   boxShadow: isActive ? `0 0 20px ${item.color}30` : "none",
                 }}
               >
                 <div
-                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg shrink-0 transition-transform duration-300 ${
-                    isActive ? "scale-110" : "group-hover:scale-110"
-                  }`}
+                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg shrink-0 transition-transform duration-300 ${isActive ? "scale-110" : "group-hover:scale-110"
+                    }`}
                   style={{
                     background: `${item.color}15`,
                     border: `1px solid ${item.color}30`,
@@ -149,9 +147,8 @@ export default function ActivitiesSection() {
                   {item.icon}
                 </div>
                 <h3
-                  className={`text-lg sm:text-xl font-bold mb-1 transition-colors ${
-                    isActive ? "text-white" : "text-white/80"
-                  }`}
+                  className={`text-lg sm:text-xl font-bold mb-1 transition-colors ${isActive ? "text-white" : "text-white/80"
+                    }`}
                   style={{ color: isActive ? item.color : "" }}
                 >
                   {item.title}
@@ -214,37 +211,37 @@ export default function ActivitiesSection() {
                 </div>
 
                 {/* Registration Buttons */}
-                  {activeTab.links && activeTab.links.map((lnk, i) => (
-                    <a
-                      key={i}
-                      href={lnk.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 font-black text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
-                      style={{ 
-                        backgroundColor: activeTab.color, 
-                        color: '#0B0F1A',
-                        boxShadow: `0 0 25px ${activeTab.color}60`
-                      }}
-                    >
-                      🔗 {lnk.label}
-                    </a>
-                  ))}
-                  {activeTab.link && activeTab.link !== "#" && (
-                    <a
-                      href={activeTab.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 font-black text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
-                      style={{ 
-                        backgroundColor: activeTab.color, 
-                        color: '#0B0F1A',
-                        boxShadow: `0 0 25px ${activeTab.color}60`
-                      }}
-                    >
-                      🔗 Daftar {activeTab.title} Sekarang
-                    </a>
-                  )}
+                {activeTab.links && activeTab.links.map((lnk, i) => (
+                  <a
+                    key={i}
+                    href={lnk.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 font-black text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
+                    style={{
+                      backgroundColor: activeTab.color,
+                      color: '#0B0F1A',
+                      boxShadow: `0 0 25px ${activeTab.color}60`
+                    }}
+                  >
+                    🔗 {lnk.label}
+                  </a>
+                ))}
+                {activeTab.link && activeTab.link !== "#" && (
+                  <a
+                    href={activeTab.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 font-black text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
+                    style={{
+                      backgroundColor: activeTab.color,
+                      color: '#0B0F1A',
+                      boxShadow: `0 0 25px ${activeTab.color}60`
+                    }}
+                  >
+                    🔗 Daftar {activeTab.title} Sekarang
+                  </a>
+                )}
               </div>
             </div>
 
@@ -257,24 +254,24 @@ export default function ActivitiesSection() {
                       <div className="flex items-center gap-4">
                         <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/10" />
                         <h4 className="text-white font-black text-sm uppercase tracking-[0.3em]" style={{ color: activeTab.color }}>
-                           {comp.name}
+                          {comp.name}
                         </h4>
                         <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/10" />
                       </div>
-                      
+
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
                         {/* Pamphlet */}
                         <div className="space-y-4">
                           <p className="text-[#E0F7FF]/40 text-[10px] font-bold uppercase tracking-widest text-center">Poster {comp.name}</p>
                           <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 group shadow-2xl">
-                              <Image
-                                src={comp.pamphlet}
-                                alt={`Poster ${comp.name}`}
-                                fill
-                                className="object-contain opacity-0 transition-opacity duration-500 cursor-zoom-in"
-                                onClick={() => setExpandedImage(comp.pamphlet)}
-                                onLoadingComplete={(img: HTMLImageElement) => img.classList.remove('opacity-0')}
-                              />
+                            <Image
+                              src={comp.pamphlet}
+                              alt={`Poster ${comp.name}`}
+                              fill
+                              className="object-contain opacity-0 transition-opacity duration-500 cursor-zoom-in"
+                              onClick={() => setExpandedImage(comp.pamphlet)}
+                              onLoadingComplete={(img: HTMLImageElement) => img.classList.remove('opacity-0')}
+                            />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6 pointer-events-none">
                               <p className="text-white text-xs font-medium">Poster Resmi {comp.name}</p>
                             </div>
@@ -296,9 +293,9 @@ export default function ActivitiesSection() {
                             </div>
                           </div>
                           {/* Button below QR */}
-                          <a 
-                            href={comp.link} 
-                            target="_blank" 
+                          <a
+                            href={comp.link}
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="w-full py-4 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-center transition-all bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95"
                             style={{ color: activeTab.color, borderColor: `${activeTab.color}30` }}
@@ -371,12 +368,12 @@ export default function ActivitiesSection() {
 
       {/* Image Modal */}
       {expandedImage && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-fade-in"
           onClick={() => setExpandedImage(null)}
         >
           <div className="relative w-full max-w-4xl h-[90vh] flex items-center justify-center">
-            <button 
+            <button
               className="absolute -top-12 right-0 text-white hover:text-[#00F5D4] text-4xl"
               onClick={() => setExpandedImage(null)}
             >

@@ -1,4 +1,4 @@
-type ActivityId = "sgc" | "dekan-cup" | "talkshow" | "glory-cup";
+type ActivityId = "sgc" | "dekan-cup" | "HSC" | "glory-cup";
 
 const ACTIVITY_INFO: Record<ActivityId, { items: any[]; map: any }> = {
   sgc: {
@@ -27,17 +27,17 @@ const ACTIVITY_INFO: Record<ActivityId, { items: any[]; map: any }> = {
       url: "https://maps.google.com/?q=Universitas+Semarang",
     },
   },
-  talkshow: {
+  HSC: {
     items: [
-      { icon: "📅", label: "Tanggal", value: "Coming Soon", note: "Juni 2026", color: "#00F5D4" },
-      { icon: "🕐", label: "Waktu", value: "TBA", note: "Sesi Nasional", color: "#B388FF" },
-      { icon: "📍", label: "Venue", value: "Segera Diumumkan", note: "Semarang", color: "#FF7A00" },
-      { icon: "🎓", label: "Peserta", value: "Mahasiswa & Umum", note: "Terbuka bagi semua", color: "#00F5D4" },
+      { icon: "📅", label: "Tanggal", value: "13 Mei 2026", note: "High School Clash", color: "#00F5D4" },
+      { icon: "🕐", label: "Waktu", value: "06.00 WIB", note: "Selesai", color: "#B388FF" },
+      { icon: "📍", label: "Venue", value: "Auditorium Ir. Widjatmoko", note: "Semarang", color: "#FF7A00" },
+      { icon: "🎓", label: "Peserta", value: "Siswa SMA/SMK/MA", note: "Se-Kota Semarang", color: "#00F5D4" },
     ],
     map: {
-      name: "Lokasi Segera Hadir",
-      desc: "Detail lokasi sedang dalam konfirmasi",
-      url: "#",
+      name: "Auditorium Ir. Widjatmoko",
+      desc: "Universitas Semarang, Jawa Tengah",
+      url: "https://maps.google.com/?q=Auditorium+Ir.+Widjatmoko+USM",
     },
   },
   "glory-cup": {
