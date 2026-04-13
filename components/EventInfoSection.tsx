@@ -3,15 +3,15 @@ type ActivityId = "sgc" | "dekan-cup" | "HSC" | "glory-cup";
 const ACTIVITY_INFO: Record<ActivityId, { items: any[]; map: any }> = {
   sgc: {
     items: [
-      { icon: "📅", label: "Tanggal", value: "Coming Soon", note: "Juni 2026", color: "#00F5D4" },
-      { icon: "🕐", label: "Waktu", value: "TBA", note: "Stay tuned", color: "#B388FF" },
-      { icon: "📍", label: "Venue", value: "Segera Diumumkan", note: "Semarang", color: "#FF7A00" },
+      { icon: "📅", label: "Tanggal", value: "27 April 2026", note: "Senin", color: "#00F5D4" },
+      { icon: "🕐", label: "Waktu", value: "08.00 - Selesai", note: "Registrasi 07.00", color: "#B388FF" },
+      { icon: "📍", label: "Venue", value: "Universitas Semarang", note: "Kampus USM", color: "#FF7A00" },
       { icon: "🎓", label: "Peserta", value: "Siswa SMA/SMK", note: "Sederajat", color: "#00F5D4" },
     ],
     map: {
-      name: "Lokasi Segera Hadir",
-      desc: "Detail lokasi sedang dalam konfirmasi",
-      url: "#",
+      name: "Universitas Semarang",
+      desc: "Jl. Soekarno Hatta, Tlogosari Kulon, Semarang",
+      url: "https://maps.google.com/?q=Universitas+Semarang",
     },
   },
   "dekan-cup": {

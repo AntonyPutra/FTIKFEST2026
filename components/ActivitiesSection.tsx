@@ -34,15 +34,23 @@ export default function ActivitiesSection() {
       {
         id: "sgc",
         title: "SGC",
-        subtitle: "(Student Goes to Campus)",
-        shortDesc: "Informasi kegiatan akan segera hadir.",
-        fullDesc: "Detail kegiatan Student Goes to Campus (SGC) sedang dalam tahap persiapan. Kami akan segera memperbarui informasi mengenai jadwal, pendaftaran, dan rangkaian acara menarik lainnya. Pantau terus update terbaru kami!",
-        highlights: ["Coming Soon", "Informasi Segera Hadir", "Stay Tuned"],
+        subtitle: "(Student Goes to Campus) - FUTURESCAPE",
+        shortDesc: "FUTURESCAPE: Explore, Create, Innovate. Jelajahi dunia perkuliahan dan temukan passionmu melalui Student Goes to Campus (SGC) FTIK FEST 2026.",
+        fullDesc: "Student Goes to Campus (SGC) 2026 mengusung tema 'FUTURESCAPE: Explore, Create, Innovate'. Kegiatan ini dirancang khusus untuk memperkenalkan siswa SMA/SMK sederajat pada ekosistem akademik di FTIK USM. Peserta akan diajak untuk mengeksplorasi fasilitas unggulan, memahami berbagai program studi (Informatika, SI, Ilkom, & Pariwisata), serta mendapatkan inspirasi langsung untuk menentukan jenjang pendidikan masa depan mereka.",
+        highlights: ["Tour FTIK & USM TV", "Pengenalan Program Studi", "Sharing Session & Motivasi", "Pendaftaran Dibuka"],
         icon: "🏛️",
         color: "#00F5D4",
-        pamphlet: "",
-        barcode: "",
-        link: "#",
+        pamphlet: "/Poster SGC.png",
+        barcode: "/QR SGC.png",
+        link: "https://S.ID/SGC2026",
+        competitions: [
+          {
+            name: "Pendaftaran SGC 2026",
+            pamphlet: "/Poster SGC.png",
+            barcode: "/QR SGC.png",
+            link: "https://S.ID/SGC2026"
+          }
+        ]
       },
       {
         id: "dekan-cup",
