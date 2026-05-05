@@ -17,16 +17,18 @@ const cinzelDecorative = Cinzel_Decorative({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ftikfest2026.my.id"),
-  title: "FTIK FEST 2026 – Campus Music Festival Semarang",
+  title: "FTIK FEST 2026 – Inovasi & Kreativitas Teknologi FTIK USM",
   description:
-    "FTIK FEST 2026 – Festival musik kampus paling epik di Semarang. Satu malam penuh musik, energi anak muda, dan momen tak terlupakan. Dapatkan tiketmu sekarang!",
+    "Website resmi FTIK FEST 2026. Ikuti berbagai kompetisi seru seperti Glory Cup, HSC, dan Lomba Mobile Legends. Mari berkarya dan berkompetisi di event terbesar FTIK tahun ini!",
   keywords: [
     "FTIK FEST 2026",
-    "festival musik kampus",
+    "kompetisi mahasiswa",
     "Semarang",
-    "konser mahasiswa",
+    "Glory Cup",
+    "HSC",
+    "Mobile Legends",
     "BEM FTIK",
-    "music festival",
+    "USM",
     "FTIK FEST",
   ],
   authors: [{ name: "BEM FTIK" }],
@@ -35,24 +37,24 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: "https://ftikfest2026.my.id",
     siteName: "FTIK FEST 2026",
-    title: "FTIK FEST 2026 – Campus Music Festival Semarang",
+    title: "FTIK FEST 2026 – Inovasi & Kreativitas Teknologi FTIK USM",
     description:
-      "Festival musik kampus paling epik di Semarang. Satu malam penuh musik, energi anak muda, dan momen tak terlupakan.",
+      "Website resmi FTIK FEST 2026. Ikuti berbagai kompetisi seru seperti Glory Cup, HSC, dan Lomba Mobile Legends. Mari berkarya dan berkompetisi di event terbesar FTIK tahun ini!",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "FTIK FEST 2026 – Campus Music Festival",
+        url: "/logo.png",
+        width: 800,
+        height: 800,
+        alt: "FTIK FEST 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FTIK FEST 2026 – Campus Music Festival Semarang",
+    title: "FTIK FEST 2026 – Inovasi & Kreativitas Teknologi FTIK USM",
     description:
-      "Festival musik kampus paling epik di Semarang. Satu malam penuh musik, energi anak muda, dan momen tak terlupakan.",
-    images: ["/og-image.jpg"],
+      "Website resmi FTIK FEST 2026. Ikuti berbagai kompetisi seru seperti Glory Cup, HSC, dan Lomba Mobile Legends. Mari berkarya dan berkompetisi di event terbesar FTIK tahun ini!",
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
@@ -68,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${inter.variable} ${cinzelDecorative.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
         <meta name="theme-color" content="#0B0F1A" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
