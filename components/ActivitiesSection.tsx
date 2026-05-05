@@ -90,9 +90,14 @@ export default function ActivitiesSection() {
         id: "glory-cup",
         title: "Glory Cup",
         subtitle: "Turnamen Futsal",
-        shortDesc: "Informasi turnamen puncak akan segera hadir.",
-        fullDesc: "Persiapan untuk Glory Cup sebagai puncak acara FTIK FEST 2026 sedang berlangsung. Informasi mengenai pendaftaran tim, kualifikasi, dan hadiah menarik akan segera kami informasikan melalui platform resmi kami.",
-        highlights: ["Coming Soon", "Grand Closing Perkembang", "Stay Tuned"],
+        shortDesc: "Ajang kompetisi futsal untuk pelajar SMA/SMK se-Jawa Tengah. Tunjukkan skill terbaik tim kamu dan raih kejayaan di lapangan!",
+        fullDesc: "GLORY CUP adalah kompetisi Futsal antar SMA/SMK Se-Jawa Tengah yang diselenggarakan oleh BEM FTIK USM untuk mewadahi bibit-bibit anak muda yang memiliki potensi. It's time to prove who truly owns the GLORY on the field! Jangan cuma jago di sekolah, tunjukkan ke seluruh Jawa Tengah!",
+        highlights: [
+          "Total Prize Pool Rp 7.000.000",
+          "Pelaksanaan: 12 - 14 Juni 2026 di GOR Manunggal Jati",
+          "Pendaftaran: 1 Mei - 7 Juni 2026 (Rp 300.000/Tim)",
+          "TM: 9 Juni 2026"
+        ],
         icon: "⚽",
         color: "#00F5D4",
         pamphlet: "/Poster Glory Cup.png",

@@ -42,17 +42,17 @@ const ACTIVITY_INFO: Record<ActivityId, { items: any[]; map: any }> = {
   },
   "glory-cup": {
     items: [
-      { icon: "📅", label: "Tanggal", value: "Coming Soon", note: "Juni 2026", color: "#00F5D4" },
-      { icon: "🕐", label: "Buka Gerbang", value: "TBA", note: "Datang lebih awal", color: "#B388FF" },
-      { icon: "📍", label: "Venue", value: "Segera Diumumkan", note: "Semarang, Jawa Tengah", color: "#FF7A00" },
-      { icon: "🎓", label: "Penonton", value: "Mahasiswa & Umum", note: "Semua kalangan welcome", color: "#00F5D4" },
+      { icon: "📅", label: "Tanggal", value: "12 - 14 Juni 2026", note: "Turnamen Berlangsung", color: "#00F5D4" },
+      { icon: "🕐", label: "Waktu", value: "08:00 - Selesai", note: "Jadwal pertandingan", color: "#B388FF" },
+      { icon: "📍", label: "Venue", value: "GOR Manunggal Jati", note: "Semarang, Jawa Tengah", color: "#FF7A00" },
+      { icon: "🎓", label: "Peserta", value: "Siswa SMA/SMK", note: "Se-Jawa Tengah", color: "#00F5D4" },
       { icon: "🏙️", label: "Kota", value: "Semarang", note: "Jawa Tengah, Indonesia", color: "#B388FF" },
-      { icon: "🚌", label: "Akses", value: "TBA", note: "Informasi akses segera hadir", color: "#FF7A00" },
+      { icon: "🎫", label: "Pendaftaran", value: "Rp 300.000 / Tim", note: "1 Mei - 7 Juni 2026", color: "#FF7A00" },
     ],
     map: {
-      name: "Lokasi Segera Hadir",
-      desc: "Detail lokasi sedang dalam konfirmasi",
-      url: "#",
+      name: "GOR Manunggal Jati",
+      desc: "Semarang, Jawa Tengah",
+      url: "https://maps.google.com/?q=GOR+Manunggal+Jati+Semarang",
     },
   },
 };
