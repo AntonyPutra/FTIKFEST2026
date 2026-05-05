@@ -63,13 +63,13 @@ export default function ActivitiesSection() {
         color: "#B388FF",
         pamphlet: "",
         barcode: "",
-        link: "#",
+        link: "https://s.id/MLBB2026",
         competitions: [
           {
             name: "Turnamen Mobile Legends Dekan Cup 2026!",
             pamphlet: "/Poster Lomba ML.png",
-            barcode: "/QR Lomba Ml.png",
-            link: "https://forms.gle/vS2BataW8KvrCvMH6"
+            barcode: "/QR Lomba Ml.jpeg",
+            link: "https://s.id/MLBB2026"
           },
         ]
       },
@@ -82,9 +82,9 @@ export default function ActivitiesSection() {
         highlights: ["Total Prize Pool Rp 1.500.000", "Digital Quiz System (Blitz Alpha & Omega)", "Case Challenge & Ultimate Clash Final"],
         icon: "🧠",
         color: "#FF7A00",
-        pamphlet: "",
-        barcode: "",
-        link: "#",
+        pamphlet: "/Poster HSC.png",
+        barcode: "/Qr HSC.jpeg",
+        link: "https://s.id/HSC2026",
       },
       {
         id: "glory-cup",
@@ -95,9 +95,9 @@ export default function ActivitiesSection() {
         highlights: ["Coming Soon", "Grand Closing Perkembang", "Stay Tuned"],
         icon: "⚽",
         color: "#00F5D4",
-        pamphlet: "",
-        barcode: "",
-        link: "#",
+        pamphlet: "/Poster Glory Cup.png",
+        barcode: "/QR Glory Cup.jpeg",
+        link: "https://s.id/GloryCup2026",
       },
     ];
 
